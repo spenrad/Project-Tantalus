@@ -55,11 +55,18 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         })
-
             .then(function(response){
-                
+                var cuisineArray = [];
+                for (var i = 0; i < response.cuisines.length; i++){
+                    cuisineArray.push(response.cuisines[i].cuisine.cuisine_name);
+                }
+
+                // function to write cuisines to dropdown should be called here
+
+                console.log(cuisineArray);
+                // return an array of the cuisine types
+                return(cuisineArray);
             });
-        // return an array of the cuisine types
     }   
 
     function getRestaurants(cityId, cuisineType){
