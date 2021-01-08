@@ -21,9 +21,27 @@ $(document).ready(function () {
     //          get a list of recipes with those features
     //          get recipe id for more info
 
-    zomatoKey = "157a4da6ccbad6e7ff675d7496616a8a";
+    zomatoKey = "&apikey=157a4da6ccbad6e7ff675d7496616a8a";
 
     function getCityId(cityName){
+        // replace spaces in city name with %20 for zomato
+        cityName = cityName.replaceAll(" ", "%20");
+
+        var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + cityName + "&count=1" + zomatoKey;
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+          })
+            //upon api response
+            .then(function(response) {
+                console.log(queryURL);
+                var id = response.location_suggestions[0].id;
+                // console.log(id);
+                return id;
+            });
+
+
         // take user input of a city name and return the city id using zomato cities endpoint
 
         // return city id
@@ -86,4 +104,8 @@ $(document).ready(function () {
 
         // returns an array of recipe objects
     }
+    var newId = getCityId("palo alto");
+    console.log(newId);
+        
+    
 });
