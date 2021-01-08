@@ -23,10 +23,11 @@ $(document).ready(function () {
 
     zomatoKey = "&apikey=157a4da6ccbad6e7ff675d7496616a8a";
 
-    function getCityId(cityName){
+    async function getCityId(cityName){
         // replace spaces in city name with %20 for zomato
         cityName = cityName.replaceAll(" ", "%20");
 
+        // take user input of a city name and return the city id using zomato cities endpoint
         var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + cityName + "&count=1" + zomatoKey;
 
         $.ajax({
@@ -37,19 +38,27 @@ $(document).ready(function () {
             .then(function(response) {
                 console.log(queryURL);
                 var id = response.location_suggestions[0].id;
-                // console.log(id);
+                console.log(id);
+
+                // call getCuisines
+                getCuisines(id);
+
+                // return city id
                 return id;
             });
-
-
-        // take user input of a city name and return the city id using zomato cities endpoint
-
-        // return city id
     }
 
     function getCuisines(cityId){
         // use the id in the cuisines endpoint to get a list of cuisines to populate dropdown
+        var queryURL = "https://developers.zomato.com/api/v2.1/cuisines?city_id=" + cityId + zomatoKey;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
 
+            .then(function(response){
+                
+            });
         // return an array of the cuisine types
     }   
 
@@ -104,8 +113,8 @@ $(document).ready(function () {
 
         // returns an array of recipe objects
     }
-    var newId = getCityId("palo alto");
-    console.log(newId);
-        
+    
+    
+    getCityId("london");
     
 });
