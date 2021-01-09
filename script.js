@@ -99,14 +99,13 @@ $(document).ready(function () {
                         name: response.restaurants[i].restaurant.name,
                         url: response.restaurants[i].restaurant.url,
                         phone: response.restaurants[i].restaurant.phone_numbers
-                    }
+                    };
                     restaurantArray.push(restaurantObject);
                 }
                 console.log(restaurantArray);
+                // the function call for displaying the restaurants should go here
                 return restaurantArray;
             });
-
-        //      information will include name, cuisinetype, website url, phone number, maybe pricing?
     }
 
     
@@ -114,6 +113,24 @@ $(document).ready(function () {
 
     function randomRecipe() {
         // returns a random recipe object
+        var queryURL = "https://www.themealdb.com/api/json/v1/1/random.php";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function(response){
+                var newRecipe = {
+                    // recipe attributes to be stored, more can be added later
+                    name: response.meals[0].strMeal,
+                    url: response.meals[0].strYoutube,
+                    img: response.meals[0].strMealThumb,
+                    area: response.meals[0].strArea,
+                    id: response.meals[0].idMeal
+                };
+                console.log(newRecipe);
+                // function for displaying the recipe should be called here
+                return newRecipe;
+            })
     }
 
     function getCategory(){
@@ -158,5 +175,5 @@ $(document).ready(function () {
     // getCityId("london");
 
     getRestaurants(61,25);
-    
+    randomRecipe();
 });
