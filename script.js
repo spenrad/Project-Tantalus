@@ -136,7 +136,7 @@ $(document).ready(function () {
     function getCategory(){
         // returns an array of recipe categorys
         var queryURL = "https://www.themealdb.com/api/json/v1/1/categories.php";
-        categoryArray = [];
+        var categoryArray = [];
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -155,6 +155,20 @@ $(document).ready(function () {
 
     function getArea(){
         // returns an array of recipe areas
+        var queryURL = "https://www.themealdb.com/api/json/v1/1/list.php?a=list";
+        var areaArray = [];
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function(response){
+                for (i = 0; i < response.meals.length; i++){
+                    areaArray.push(response.meals[i].strArea);
+                }
+                console.log(areaArray);
+                // function to render the areas in the dropdown should be called here
+                return areaArray;
+            });
     }
 
     function ingredientSearch(ingredient){
@@ -195,4 +209,6 @@ $(document).ready(function () {
     // randomRecipe();
 
     getCategory();
+
+    getArea();
 });
