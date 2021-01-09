@@ -174,11 +174,42 @@ $(document).ready(function () {
     function ingredientSearch(ingredient){
         // takes an ingredient string from the user and uses mealdb filter by main ingredient
         // store ids in an array (quantity can be decided later)
-
-        // search recipes individually by id and add their information to an object
-        // add the object to an array 
-
-        // return an array of recipe objects
+        var idArray = [];
+        var recipeArray = [];
+        var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + ingredient;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function(response){
+                for (var i = 0; i < Math.min(3, response.meals.length); i++){
+                    idArray.push(response.meals[i].idMeal);
+                }
+                console.log(idArray);
+                // search recipes individually by id and add their information to an object
+                // add the object to an array 
+                for (var i = 0; i < idArray.length; i++){
+                    queryURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idArray[i];
+                    $.ajax({
+                        url: queryURL,
+                        method: "GET"
+                    })
+                        .then(function(response) {
+                            var newRecipe = {
+                                // recipe attributes to be stored, more can be added later
+                                name: response.meals[0].strMeal,
+                                url: response.meals[0].strYoutube,
+                                img: response.meals[0].strMealThumb,
+                                area: response.meals[0].strArea,
+                                id: response.meals[0].idMeal
+                            };
+                            recipeArray.push(newRecipe);
+                        });
+                }
+                console.log(recipeArray);
+                // recipes should be rendered here
+                return recipeArray;
+            });
     }
 
     function categorySearch(category){
@@ -208,7 +239,9 @@ $(document).ready(function () {
     
     // randomRecipe();
 
-    getCategory();
+    // getCategory();
 
-    getArea();
+    // getArea();
+
+    ingredientSearch("beef");
 });
