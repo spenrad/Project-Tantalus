@@ -97,10 +97,36 @@ $(document).ready(function () {
                         // restaurant attributes to store, more can be added later
                         name: response.restaurants[i].restaurant.name,
                         url: response.restaurants[i].restaurant.url,
-                        phone: response.restaurants[i].restaurant.phone_numbers
+                        phone: response.restaurants[i].restaurant.phone_numbers,
+                        featured_image: response.restaurants[i].restaurant.featured_image,
+                        location: response.restaurants[i].restaurant.location.address,
+                        cuisines: response.restaurants[i].restaurant.cuisines,
+                        menu_url: response.restaurants[i].restaurant.menu_url,
+                        hours: response.restaurants[i].restaurant.timings,
+                        rating: response.restaurants[i].restaurant.user_rating.aggregate_rating,
+
                     };
                     restaurantArray.push(restaurantObject);
-                }
+                 
+                // placing restaurant info in cards   
+                var html = `
+                <div class="card" style="width: 300px;">
+                <div class="card-divider">
+                ${response.restaurants[i].restaurant.name}
+                </div>
+                <img src="${response.restaurants[i].restaurant.thumb}">
+                <div class="card-section">
+                  <h5>${""}</h5>
+                  <p>${""}</p>
+                  <p>${""}</p>
+                </div>
+              </div>
+              `;
+                $('.grid-container').append(html);
+            }
+            // checking for more info to pull
+                console.log(response);
+               
                 console.log(restaurantArray);
                 // the function call for displaying the restaurants should go here
                 return restaurantArray;
