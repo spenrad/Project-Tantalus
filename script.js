@@ -171,17 +171,30 @@ $(document).ready(function () {
             });
     }
 
-    function ingredientSearch(ingredient){
-        // takes an ingredient string from the user and uses mealdb filter by main ingredient
-        // store ids in an array (quantity can be decided later)
+    function recipeSearch(queryType, query){
+        // takes a queryType (1 for ingredient,2 for category or 3 for area)
+        //      and a query (the ingredient, area or category to search for)
         var idArray = [];
         var recipeArray = [];
-        var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + ingredient;
+        var queryURL = "";
+        // ingredient search
+        if (queryType == 1){
+            queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + query;
+        }
+        // area search
+        else if (queryType == 2){
+            queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?a=" + query;
+        }
+        // category search
+        else if (queryType == 3){
+            queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + query;
+        }
         $.ajax({
             url: queryURL,
             method: "GET"
         })
             .then(function(response){
+                // store ids in an array (quantity can be decided later)
                 for (var i = 0; i < Math.min(3, response.meals.length); i++){
                     idArray.push(response.meals[i].idMeal);
                 }
@@ -211,27 +224,6 @@ $(document).ready(function () {
                 return recipeArray;
             });
     }
-
-    function categorySearch(category){
-        // takes a category from the dropdown menu and uses mealdb filter by category
-        // store ids in an array (quantity can be decided later)
-
-        // search recipes individually by id and add their information to an object
-        // add the object to an array 
-
-        // returns and array of recipe objects
-    }
-
-    function areaSearch(area){
-        // takes an area from the area dropdown menu and uses mealdb filter by area
-        // store ids in an array (quantity can be decided later)
-
-        // search recipes individually by id and add their information to an object
-        // add the object to an array 
-
-        // returns an array of recipe objects
-    }
-    
     
     // getCityId("london");
 
@@ -243,5 +235,9 @@ $(document).ready(function () {
 
     // getArea();
 
-    ingredientSearch("beef");
+    // recipeSearch(1, "beef");
+
+    // recipeSearch(2, "chinese");
+
+    // recipeSearch(3, "breakfast");
 });
