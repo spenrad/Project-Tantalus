@@ -130,11 +130,27 @@ $(document).ready(function () {
                 console.log(newRecipe);
                 // function for displaying the recipe should be called here
                 return newRecipe;
-            })
+            });
     }
 
     function getCategory(){
         // returns an array of recipe categorys
+        var queryURL = "https://www.themealdb.com/api/json/v1/1/categories.php";
+        categoryArray = [];
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function(response){
+                for (i = 0; i < response.categories.length; i++){
+                    categoryArray.push(response.categories[i].strCategory);
+                }
+                console.log(categoryArray);
+                // function to render the categories in the dropdown should be called here
+                return categoryArray;
+            });
+
+
     }
 
     function getArea(){
@@ -174,6 +190,9 @@ $(document).ready(function () {
     
     // getCityId("london");
 
-    getRestaurants(61,25);
-    randomRecipe();
+    // getRestaurants(61,25);
+    
+    // randomRecipe();
+
+    getCategory();
 });
