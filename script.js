@@ -21,9 +21,11 @@ $(document).ready(function () {
     //          get a list of recipes with those features
     //          get recipe id for more info
 
-    zomatoKey = "&apikey=157a4da6ccbad6e7ff675d7496616a8a";
+    var zomatoKey = "&apikey=157a4da6ccbad6e7ff675d7496616a8a";
+    // this variable is global so it can be populated in get cuisines and used in the restaurant search function
+    var cuisineIdArray = [];
 
-    async function getCityId(cityName){
+    function getCityId(cityName){
         // replace spaces in city name with %20 for zomato
         cityName = cityName.replaceAll(" ", "%20");
 
@@ -49,6 +51,7 @@ $(document).ready(function () {
     }
 
     function getCuisines(cityId){
+        cuisineIdArray = [];
         // use the id in the cuisines endpoint to get a list of cuisines to populate dropdown
         var queryURL = "https://developers.zomato.com/api/v2.1/cuisines?city_id=" + cityId + zomatoKey;
         $.ajax({
@@ -59,20 +62,32 @@ $(document).ready(function () {
                 var cuisineArray = [];
                 for (var i = 0; i < response.cuisines.length; i++){
                     cuisineArray.push(response.cuisines[i].cuisine.cuisine_name);
+                    cuisineIdArray.push(response.cuisines[i].cuisine.cuisine_id);
                 }
 
-                // function to write cuisines to dropdown should be called here
+                // function to write cuisines to dropdown should be called here, they should have a data type that represents the id
+                //      these are stored in cuisineIdArray (some way to know what the id of the cuisine the user picked is)
 
                 console.log(cuisineArray);
+                console.log(cuisineIdArray);
                 // return an array of the cuisine types
                 return(cuisineArray);
             });
     }   
 
-    function getRestaurants(cityId, cuisineType){
-        // using the city id from city selected by the user and cuisineType if one was selected
+    function getRestaurants(cityId, cuisineTypeId){
+        // using the city id from city selected by the user and cuisineTypeId if one was selected
+        //      if no cuisine type entered cuisineType should be 0
+        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityId + "&entity_type=city&count=10";
+        if (cuisineTypeId != 0){
+            queryURL+= "&cuisines=";
+            queryURL += cuisineTypeId;
+        }
+        queryURL += zomatoKey;
 
-        // use zomato search endpoint and return and array of restaurant objects
+        // use zomato search endpoint and return an array of restaurant objects
+        
+
         //      information will include name, cuisinetype, website url, phone number, maybe pricing?
     }
 
