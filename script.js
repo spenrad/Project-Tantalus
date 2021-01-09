@@ -79,7 +79,7 @@ $(document).ready(function () {
         var restaurantArray = [];
         // using the city id from city selected by the user and cuisineTypeId if one was selected
         //      if no cuisine type entered cuisineType should be 0
-        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityId + "&entity_type=city&count=10";
+        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityId + "&entity_type=city&count=50";
         if (cuisineTypeId != 0){
             queryURL+= "&cuisines=";
             queryURL += cuisineTypeId;
@@ -92,33 +92,41 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function(response) {
-                for (var i = 0; i < 10; i++){
+                var indexArray = [];
+                for (var i = 0; i < response.restaurants.length; i ++){
+                    indexArray.push(i);
+                }
+                console.log(indexArray);
+                for (var i = 0; i < Math.min(10,response.restaurants.length); i++){
+                    var randIndex = Math.floor(Math.random()*indexArray.length);
+                    var randNum = indexArray[randIndex];
+                    indexArray.splice(randIndex, 1);
                     var restaurantObject = {
                         // restaurant attributes to store, more can be added later
-                        name: response.restaurants[i].restaurant.name,
-                        url: response.restaurants[i].restaurant.url,
-                        phone: response.restaurants[i].restaurant.phone_numbers,
-                        featured_image: response.restaurants[i].restaurant.featured_image,
-                        location: response.restaurants[i].restaurant.location.address,
-                        cuisines: response.restaurants[i].restaurant.cuisines,
-                        menu_url: response.restaurants[i].restaurant.menu_url,
-                        hours: response.restaurants[i].restaurant.timings,
-                        rating: response.restaurants[i].restaurant.user_rating.aggregate_rating,
+                        name: response.restaurants[randNum].restaurant.name,
+                        url: response.restaurants[randNum].restaurant.url,
+                        phone: response.restaurants[randNum].restaurant.phone_numbers,
+                        featuredImg: response.restaurants[randNum].restaurant.featured_image,
+                        location: response.restaurants[randNum].restaurant.location.address,
+                        cuisines: response.restaurants[randNum].restaurant.cuisines,
+                        menuURL: response.restaurants[randNum].restaurant.menu_url,
+                        hours: response.restaurants[randNum].restaurant.timings,
+                        rating: response.restaurants[randNum].restaurant.user_rating.aggregate_rating,
 
                     };
                     restaurantArray.push(restaurantObject);
                  
                 // placing restaurant info in cards   
                 var html = `
-                <div class="card" style="width: 300px;">
+                <div class="card" id="displayCard" style="width: 300px;">
                 <div class="card-divider">
-                ${response.restaurants[i].restaurant.name}
+                ${restaurantArray[i].name}
                 </div>
-                <img src="${response.restaurants[i].restaurant.thumb}">
+                <img src="${restaurantArray[i].featuredImg}">
                 <div class="card-section">
-                  <h5>${""}</h5>
-                  <p>${""}</p>
-                  <p>${""}</p>
+                  <p>${restaurantArray[i].location}</p>
+                  <p>Hours: ${restaurantArray[i].hours}</p>
+                  <p>Rating: ${restaurantArray[i].rating} / 5</p>
                 </div>
               </div>
               `;
@@ -126,8 +134,6 @@ $(document).ready(function () {
             }
             // checking for more info to pull
                 console.log(response);
-               
-                console.log(restaurantArray);
                 // the function call for displaying the restaurants should go here
                 return restaurantArray;
             });
@@ -152,6 +158,10 @@ $(document).ready(function () {
                     area: response.meals[0].strArea,
                     id: response.meals[0].idMeal
                 };
+
+                var html = `
+              `;
+
                 console.log(newRecipe);
                 // function for displaying the recipe should be called here
                 return newRecipe;
