@@ -76,6 +76,8 @@ $(document).ready(function () {
     }   
 
     function getRestaurants(cityId, cuisineTypeId){
+        // array to store restaurant objects
+        var restaurantArray = [];
         // using the city id from city selected by the user and cuisineTypeId if one was selected
         //      if no cuisine type entered cuisineType should be 0
         var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityId + "&entity_type=city&count=10";
@@ -86,7 +88,23 @@ $(document).ready(function () {
         queryURL += zomatoKey;
 
         // use zomato search endpoint and return an array of restaurant objects
-        
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function(response) {
+                for (var i = 0; i < 10; i++){
+                    var restaurantObject = {
+                        // restaurant attributes to store, more can be added later
+                        name: response.restaurants[i].restaurant.name,
+                        url: response.restaurants[i].restaurant.url,
+                        phone: response.restaurants[i].restaurant.phone_numbers
+                    }
+                    restaurantArray.push(restaurantObject);
+                }
+                console.log(restaurantArray);
+                return restaurantArray;
+            });
 
         //      information will include name, cuisinetype, website url, phone number, maybe pricing?
     }
@@ -137,6 +155,8 @@ $(document).ready(function () {
     }
     
     
-    getCityId("london");
+    // getCityId("london");
+
+    getRestaurants(61,25);
     
 });
