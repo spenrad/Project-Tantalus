@@ -13,7 +13,7 @@
 */
 
 #landing {
-  background-image: url(/todd-quackenbush-x5SRhkFajrA-unsplash.jpg);
+  background-image: url(./images/temp-bg-img.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -31,7 +31,7 @@
 
 .grid-container h2 {
   font-size: 40px;
-  color: #ffffff;
+  color: #c7c7c7;
 }
 
 .grid-container p {
