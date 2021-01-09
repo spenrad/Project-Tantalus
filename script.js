@@ -235,9 +235,12 @@ $(document).ready(function () {
 
     // getArea();
 
+    // search by ingredient: beef
     // recipeSearch(1, "beef");
 
+    // search by area: chinese
     // recipeSearch(2, "chinese");
 
+    // search by category: breakfast
     // recipeSearch(3, "breakfast");
 });
