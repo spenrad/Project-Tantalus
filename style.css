@@ -3,43 +3,81 @@
   padding: 0;
 }
 
-.grid-container {
-  background: url(/todd-quackenbush-x5SRhkFajrA-unsplash.jpg);
-  min-height: 100vh;
+/* 
+** Landing page rough styling
+
+  ** Clean up class names
+  ** Fix flow to match page
+  ** Look through and condense duplicate styling
+
+*/
+
+#landing {
+  background-image: url(/todd-quackenbush-x5SRhkFajrA-unsplash.jpg);
   background-size: cover;
   background-position: center;
-  padding: 220px 0 200px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px auto;
 }
 
-.container {
-  height: 100%;
-  width: 100%;
-  margin: auto;
+.grid-container {
+  text-align: center;
+  padding: auto;
 }
 
-.container h1 {
-  margin: 0;
-  padding: 0;
+.grid-container h2 {
   font-size: 40px;
-  font-weight: 500;
-  color: #dcdde1;
+  color: #ffffff;
 }
 
-.container p {
+.grid-container p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #c7cbd8;
   margin: 15px;
-  padding: 0;
-  font-size: 16px;
-  color: #dcdde1;
+  padding: auto;
 }
+
+.btn-div {
+  margin-top: 15px;
+}
+
 .btn {
-  background: lightskyblue;
+  background: rgba(27, 114, 165, 0.63);
   color: white;
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 0 5px;
-  width: 150px;
-  height: 30px;
+  font-size: 16px;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  margin: 0.5rem;
 }
+
+a:link,
+a:visited {
+  color: white;
+}
+
+a:hover,
+a:active {
+  background-color: rgb(27, 114, 165);
+  opacity: 1;
+}
+
+/****************************************************************/
+
+/****************************************************************/
+
+/* 
+
+  ** CSS for Micromodal
+
+*/
+
+/* *************************************************************/
 
 /* .btn {
   border: 2px solid royalblue;
@@ -55,4 +93,48 @@
   height: 50px;
   text-justify: center;
   border: solid black 2px;
+/* Parsley CSS */
+/* input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: #B94A48;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+} */
+
+/* Micro Modal CSS */
+
+/* .modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
 } */
