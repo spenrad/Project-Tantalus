@@ -80,7 +80,7 @@ $(document).ready(function () {
         var restaurantArray = [];
         // using the city id from city selected by the user and cuisineTypeId if one was selected
         //      if no cuisine type entered cuisineType should be 0
-        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityId + "&entity_type=city&count=10";
+        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityId + "&entity_type=city&count=50";
         if (cuisineTypeId != 0){
             queryURL+= "&cuisines=";
             queryURL += cuisineTypeId;
@@ -93,12 +93,20 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function(response) {
-                for (var i = 0; i < 10; i++){
+                var indexArray = [];
+                for (var i = 0; i < response.restaurants.length; i ++){
+                    indexArray.push(i);
+                }
+                console.log(indexArray);
+                for (var i = 0; i < Math.min(10,response.restaurants.length); i++){
+                    var randIndex = Math.floor(Math.random()*indexArray.length);
+                    var randNum = indexArray[randIndex];
+                    indexArray.splice(randIndex, 1);
                     var restaurantObject = {
                         // restaurant attributes to store, more can be added later
-                        name: response.restaurants[i].restaurant.name,
-                        url: response.restaurants[i].restaurant.url,
-                        phone: response.restaurants[i].restaurant.phone_numbers
+                        name: response.restaurants[randNum].restaurant.name,
+                        url: response.restaurants[randNum].restaurant.url,
+                        phone: response.restaurants[randNum].restaurant.phone_numbers
                     };
                     restaurantArray.push(restaurantObject);
                 }
@@ -227,7 +235,7 @@ $(document).ready(function () {
     
     // getCityId("london");
 
-    // getRestaurants(61,25);
+    getRestaurants(61,25);
     
     // randomRecipe();
 
