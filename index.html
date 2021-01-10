@@ -59,19 +59,19 @@
             <h4>Seach for a Recipe</h4>
             <form id="eat-in">
               <label
-                >Input Text 1
-                <input type="text" placeholder="example text" />
-              </label>
-              <label>
-                Input Text 2
-                <input type="text" placeholder="example text" />
-              </label>
-              <label>
-                Input Text 3
-                <input type="text" placeholder="example text" />
+                >Search by Main Ingredient:
+                <input type="text" placeholder="Input main ingredient" />
+              <label
+                >Choose by Meal Type:
+                <select>
+                  <option value="" placeholder="choose something"></option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
               </label>
               <label
-                >Choose a Category:
+                >Choose by Cuisine Type:
                 <select>
                   <option value="" placeholder="choose something"></option>
                   <option value="option1">Option 1</option>
@@ -89,9 +89,9 @@
             <div class="card" id="ran-recipe">
               <div class="card-section">
                 <div class="card-divider">
-                  <h4>Recipe Name (3 Cheese Macaroni)</h4>
+                  <h4 id="randMealName">Recipe Name (3 Cheese Macaroni)</h4>
                 </div>
-                <img src="./images/temp-bg.jpg" />
+                <img src="#" id="randMeal" />
                 <div class="card-section">
                   <!-- <p>Ingredients:</p> -->
                   <!-- <p>Instructions:</p> -->
@@ -104,8 +104,36 @@
           <!-- </div> -->
         </div>
       </div>
-      <div id="cardArea"></div>
+      <div id="cardAreaCook"></div>
     </main>
+
+    <div class="grid-container">
+    <section class="eat-out">
+      <div class="grid-conatiner">
+        <h2>THE EASY APPROACH</h2>
+        <div class="grid-x grid-padding-x">
+          <div class="cell medium-6">
+            <h4>Seach for a Recipe</h4>
+            <form id="eat-in">
+              <label
+                >Enter your location:
+                <input type="text" placeholder="Your location" />
+              </label>
+              <label>
+                Select a cousine type:
+                <input type="text" placeholder="Cousine type" />
+              </label>
+              <div class="input-group">
+                <input type="submit" class="button" value="Submit" />
+                <input type="submit" class="button" value="Reset" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="cardAreaRest"></div>
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

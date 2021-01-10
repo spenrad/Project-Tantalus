@@ -130,7 +130,7 @@ $(document).ready(function () {
                 </div>
               </div>
               `;
-                $('#cardArea').append(html);
+                $('#cardAreaRest').append(html);
             }
             // checking for more info to pull
                 console.log(response);
@@ -156,13 +156,19 @@ $(document).ready(function () {
                     url: response.meals[0].strYoutube,
                     img: response.meals[0].strMealThumb,
                     area: response.meals[0].strArea,
-                    id: response.meals[0].idMeal
+                    id: response.meals[0].idMeal,
+                    source: response.meals[0].strSource
                 };
 
-                var html = `
-              `;
+                $('#randMealName').text(newRecipe.name);
+                $('#randMeal').attr("src", newRecipe.img);
+                // recipe strings goes in modal
+                // youtube link in modal
+                // source link in modal
 
-                console.log(newRecipe);
+
+                console.log(newRecipe)
+                console.log(response);
                 // function for displaying the recipe should be called here
                 return newRecipe;
             });
@@ -181,6 +187,7 @@ $(document).ready(function () {
                     categoryArray.push(response.categories[i].strCategory);
                 }
                 console.log(categoryArray);
+                console.log(response);
                 // function to render the categories in the dropdown should be called here
                 return categoryArray;
             });
@@ -201,6 +208,7 @@ $(document).ready(function () {
                     areaArray.push(response.meals[i].strArea);
                 }
                 console.log(areaArray);
+                console.log(response);
                 // function to render the areas in the dropdown should be called here
                 return areaArray;
             });
