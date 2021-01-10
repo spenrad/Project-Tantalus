@@ -157,8 +157,21 @@ $(document).ready(function () {
                     img: response.meals[0].strMealThumb,
                     area: response.meals[0].strArea,
                     id: response.meals[0].idMeal,
-                    source: response.meals[0].strSource
+                    source: response.meals[0].strSource,
+                    ingredients: [],
+                    servings: []
                 };
+                
+                var j = 1;
+                while (j < 21 && response.meals[0]["strIngredient" + j] != "" && response.meals[0]["strIngredient" + j] != " " && response.meals[0]["strIngredient" + j] != null){
+                    newRecipe.ingredients.push(response.meals[0]["strIngredient" + j]);
+                    j+= 1;
+                }
+                var j = 1;
+                while (j < 21 && response.meals[0]["strMeasure" + j] != "" && response.meals[0]["strMeasure" + j] != " " && response.meals[0]["strMeasure" + j] != null){
+                    newRecipe.servings.push(response.meals[0]["strMeasure" + j]);
+                    j+= 1;
+                }
 
                 $('#randMealName').text(newRecipe.name);
                 $('#randMeal').attr("src", newRecipe.img);
@@ -257,12 +270,27 @@ $(document).ready(function () {
                                 url: response.meals[0].strYoutube,
                                 img: response.meals[0].strMealThumb,
                                 area: response.meals[0].strArea,
-                                id: response.meals[0].idMeal
+                                id: response.meals[0].idMeal,
+                                ingredients: [],
+                                servings: []
                             };
+                            var j = 1;
+                            while (j < 21 && response.meals[0]["strIngredient" + j] != "" && response.meals[0]["strIngredient" + j] != " " && response.meals[0]["strIngredient" + j] != null) {
+                                newRecipe.ingredients.push(response.meals[0]["strIngredient" + j]);
+                                j += 1;
+                            }
+                            var j = 1;
+                            while (j < 21 && response.meals[0]["strMeasure" + j] != "" && response.meals[0]["strMeasure" + j] != " " && response.meals[0]["strMeasure" + j] != null) {
+                                newRecipe.servings.push(response.meals[0]["strMeasure" + j]);
+                                j += 1;
+                            }
                             recipeArray.push(newRecipe);
+                            console.log(newRecipe.ingredients[i] + "- " + newRecipe.servings[i]);
                         });
                 }
                 console.log(recipeArray);
+                console.log(response);
+                
                 // recipes should be rendered here
                 return recipeArray;
             });
