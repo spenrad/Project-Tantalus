@@ -1,20 +1,27 @@
+/* 
+** Styling todos
+
+  ** Clean up class names
+  ** Fix flow to match page
+  ** Look through and condense duplicate styling
+  
+**
+*/
+
+/**********************************************/
+/* ---- Base Styles ---- */
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: white;
+  background: rgb(172, 167, 167);
+  color: rgb(31, 31, 31);
 }
-
-/* 
-** Landing page rough styling
-
-  ** Clean up class names
-  ** Fix flow to match page
-  ** Look through and condense duplicate styling
-
-*/
+/***********************************************/
+/*  ---- Landing Page ---- */
 
 #landing {
   background-image: url(./images/temp-bg.jpg);
@@ -89,7 +96,6 @@ body {
 /* ---- Cook Content ---- */
 
 .cook-content {
-  background: lightgray;
   /* display: none; */
 }
 
@@ -102,15 +108,25 @@ body {
   padding: 0 40px;
 }
 
-.btn-submit {
-  width: 50%;
-  margin-right: 5px;
+.submit-btn,
+.reset-btn {
+  background: darkolivegreen;
+  color: white;
+  width: 40%;
+  height: 45px;
+  margin: 0 20px;
+  cursor: pointer;
 }
 
-.btn-reset {
-  width: 50%;
-  margin-left: 5px;
+.submit-btn:hover,
+.reset-btn:hover {
+  background: olivedrab;
 }
+
+/* #eat-in,
+#eat-out label {
+  color: white;
+} */
 
 /* --- Card Style --- */
 #randomCard h4 {
@@ -135,7 +151,7 @@ body {
 }
 
 #btn-retry:hover {
-  opacity: 0.9;
+  background: olivedrab;
 }
 /*****************************************************************/
 /* ---- Eat Out Content ---- */
@@ -145,7 +161,6 @@ body {
 }
 
 .eatOut-container {
-  background: lightgray;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -168,16 +183,6 @@ body {
   justify-content: center;
 }
 
-.submit-btn,
-.reset-btn {
-  background: darkolivegreen;
-  color: white;
-  width: 40%;
-  height: 45px;
-  margin: 0 20px;
-  cursor: pointer;
-}
-
 .card-container {
   margin: 20px;
   padding: 10px;
@@ -197,6 +202,11 @@ body {
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.card button:hover {
+  background: olivedrab;
+  /* opacity: 0.8; */
 }
 
 /****************************************************************/
