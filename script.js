@@ -295,18 +295,18 @@ $(document).ready(function () {
                             }
                             recipeArray.push(newRecipe);
                             console.log(newRecipe.ingredients[i] + "- " + newRecipe.servings[i]);
-                        html = `<div class="card" id="displayCard" style="width: 300px;">
-                        <div class="card-divider">
-                        ${newRecipe.name}
+                        html = `
+                        <div class="cell small-12 medium-3">
+                        <div class="card">
+                          <div class="card-divider">${newRecipe.name}</div>
+                          <img src="${newRecipe.img}">
+                          <div class="card-section">
+                            <p>Hours:</p>
+                            <p>Ratings:</p>
+                          </div>
+                          <button>More Info</button>
                         </div>
-                        <img src="${newRecipe.img}">
-                        <div class="card-section">
-                          <p>${""}</p>
-                          <p>${""}</p>
-                          <p>${""}</p>
-                        </div>
-                      </div>
-                        `;
+                      </div>`;
                         $('#cardAreaCook').append(html);
                     });
                         
