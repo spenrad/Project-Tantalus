@@ -13,28 +13,36 @@
 */
 
 #landing {
-  background-image: url(./images/temp-bg-img.jpg);
+  background-image: url(./images/temp-bg.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px auto;
+  position: relative;
 }
 
-.grid-container {
+.overlay {
+  background: black;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.main-div {
   text-align: center;
   padding: auto;
+  z-index: 1;
 }
 
-.grid-container h2 {
+.main-div h2 {
   font-size: 40px;
-  color: #c7c7c7;
+  color: white;
 }
 
-.grid-container p {
+.main-div p {
   font-size: 20px;
   line-height: 1.5;
   color: #c7cbd8;
@@ -44,30 +52,51 @@
 
 .btn-div {
   margin-top: 15px;
+  padding: 15px;
 }
 
 .btn {
   background: rgba(27, 114, 165, 0.63);
   color: white;
   font-size: 16px;
-  padding: 15px 20px;
+  padding: 10px;
   text-decoration: none;
   border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(27, 114, 165, 0.63);
   margin: 0.5rem;
 }
 
-a:link,
-a:visited {
+.btn:link,
+.btn:visited {
   color: white;
 }
 
-a:hover,
-a:active {
+.btn:hover {
   background-color: rgb(27, 114, 165);
+  font-size: 19px;
   opacity: 1;
 }
 
+.btn:active {
+  box-shadow: none;
+}
+
 /****************************************************************/
+
+/* ---- Cook Content Styling ---- */
+
+.cook-option {
+  margin: 45px;
+}
+
+.cook-option h2 {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+}
+.button {
+  margin: 10px;
+}
 
 /****************************************************************/
 

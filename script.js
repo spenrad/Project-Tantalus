@@ -130,7 +130,7 @@ $(document).ready(function () {
                 </div>
               </div>
               `;
-                $('.grid-container').append(html);
+                $('#cardArea').append(html);
             }
             // checking for more info to pull
                 console.log(response);
