@@ -223,6 +223,10 @@ $(document).ready(function () {
             .then(function(response){
                 for (i = 0; i < response.meals.length; i++){
                     areaArray.push(response.meals[i].strArea);
+                    var newOption = $("<option>");
+                    newOption.attr("value", areaArray[areaArray.length-1]);
+                    newOption.text(areaArray[areaArray.length-1]);
+                    $("#area").append(newOption);
                 }
                 console.log(areaArray);
                 console.log(response);
@@ -330,7 +334,7 @@ $(document).ready(function () {
 
     getCategory();
 
-    // getArea();
+    getArea();
 
     // search by ingredient: beef
     // recipeSearch(1, "beef");
