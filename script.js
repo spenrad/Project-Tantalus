@@ -271,6 +271,7 @@ $(document).ready(function () {
                                 img: response.meals[0].strMealThumb,
                                 area: response.meals[0].strArea,
                                 id: response.meals[0].idMeal,
+                                img: response.meals[0].strMealThumb, 
                                 ingredients: [],
                                 servings: []
                             };
@@ -286,10 +287,23 @@ $(document).ready(function () {
                             }
                             recipeArray.push(newRecipe);
                             console.log(newRecipe.ingredients[i] + "- " + newRecipe.servings[i]);
-                        });
+                        html = `<div class="card" id="displayCard" style="width: 300px;">
+                        <div class="card-divider">
+                        ${newRecipe.name}
+                        </div>
+                        <img src="${newRecipe.img}">
+                        <div class="card-section">
+                          <p>${""}</p>
+                          <p>${""}</p>
+                          <p>${""}</p>
+                        </div>
+                      </div>
+                        `;
+                        $('#cardAreaCook').append(html);
+                    });
+                        
                 }
                 console.log(recipeArray);
-                console.log(response);
                 
                 // recipes should be rendered here
                 return recipeArray;
