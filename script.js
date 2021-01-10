@@ -133,9 +133,22 @@ $(document).ready(function () {
                     url: response.meals[0].strYoutube,
                     img: response.meals[0].strMealThumb,
                     area: response.meals[0].strArea,
-                    id: response.meals[0].idMeal
+                    id: response.meals[0].idMeal,
+                    ingredients: [],
+                    servings: []
                 };
+                var j = 1;
+                while (j < 21 && response.meals[0]["strIngredient" + j] != " "){
+                    newRecipe.ingredients.push(response.meals[0]["strIngredient" + j]);
+                    j+= 1;
+                }
+                var j = 1;
+                while (j < 21 && response.meals[0]["strMeasure" + j] != ""){
+                    newRecipe.servings.push(response.meals[0]["strMeasure" + j]);
+                    j+= 1;
+                }
                 console.log(newRecipe);
+                console.log(response);
                 // function for displaying the recipe should be called here
                 return newRecipe;
             });
@@ -235,9 +248,9 @@ $(document).ready(function () {
     
     // getCityId("london");
 
-    getRestaurants(61,25);
+    // getRestaurants(61,25);
     
-    // randomRecipe();
+    randomRecipe();
 
     // getCategory();
 
