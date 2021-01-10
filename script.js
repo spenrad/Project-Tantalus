@@ -39,7 +39,7 @@ $(document).ready(function () {
             //upon api response
             .then(function(response) {
                 var id = response.location_suggestions[0].id;
-                console.log(id);
+                // console.log(id);
 
                 // call getCuisines
                 getCuisines(id);
@@ -67,8 +67,8 @@ $(document).ready(function () {
                 // function to write cuisines to dropdown should be called here, they should have a data type that represents the id
                 //      these are stored in cuisineIdArray (some way to know what the id of the cuisine the user picked is)
 
-                console.log(cuisineArray);
-                console.log(cuisineIdArray);
+                // console.log(cuisineArray);
+                // console.log(cuisineIdArray);
                 // return an array of the cuisine types
                 return(cuisineArray);
             });
@@ -96,7 +96,7 @@ $(document).ready(function () {
                 for (var i = 0; i < response.restaurants.length; i ++){
                     indexArray.push(i);
                 }
-                console.log(indexArray);
+                // console.log(indexArray);
                 for (var i = 0; i < Math.min(10,response.restaurants.length); i++){
                     var randIndex = Math.floor(Math.random()*indexArray.length);
                     var randNum = indexArray[randIndex];
@@ -133,7 +133,7 @@ $(document).ready(function () {
                 $('#cardAreaRest').append(html);
             }
             // checking for more info to pull
-                console.log(response);
+                // console.log(response);
                 // the function call for displaying the restaurants should go here
                 return restaurantArray;
             });
@@ -180,8 +180,8 @@ $(document).ready(function () {
                 // source link in modal
 
 
-                console.log(newRecipe)
-                console.log(response);
+                // console.log(newRecipe);
+                // console.log(response);
                 // function for displaying the recipe should be called here
                 return newRecipe;
             });
@@ -203,8 +203,8 @@ $(document).ready(function () {
                     newOption.text(categoryArray[categoryArray.length-1]);
                     $("#category").append(newOption);
                 }
-                console.log(categoryArray);
-                console.log(response);
+                // console.log(categoryArray);
+                // console.log(response);
                 // function to render the categories in the dropdown should be called here
                 return categoryArray;
             });
@@ -228,8 +228,8 @@ $(document).ready(function () {
                     newOption.text(areaArray[areaArray.length-1]);
                     $("#area").append(newOption);
                 }
-                console.log(areaArray);
-                console.log(response);
+                // console.log(areaArray);
+                // console.log(response);
                 // function to render the areas in the dropdown should be called here
                 return areaArray;
             });
@@ -270,7 +270,7 @@ $(document).ready(function () {
                     indexArray.splice(randIndex, 1);
                     idArray.push(response.meals[randNum].idMeal);;
                 }
-                console.log(idArray);
+                // console.log(idArray);
                 // search recipes individually by id and add their information to an object
                 // add the object to an array 
                 for (var i = 0; i < idArray.length; i++){
@@ -302,7 +302,7 @@ $(document).ready(function () {
                                 j += 1;
                             }
                             recipeArray.push(newRecipe);
-                            console.log(newRecipe.ingredients[i] + "- " + newRecipe.servings[i]);
+                            // console.log(newRecipe.ingredients[i] + "- " + newRecipe.servings[i]);
                         html = `<div class="card" id="displayCard" style="width: 300px;">
                         <div class="card-divider">
                         ${newRecipe.name}
@@ -319,7 +319,7 @@ $(document).ready(function () {
                     });
                         
                 }
-                console.log(recipeArray);
+                // console.log(recipeArray);
                 
                 // recipes should be rendered here
                 return recipeArray;
@@ -350,7 +350,7 @@ $(document).ready(function () {
         var ingredient = $("#ingredient").val();
         var category = $("#category").val();
         var area = $("#area").val();
-        console.log(category + ingredient + area);
+        // console.log(category + ingredient + area);
         if (ingredient != ""){
             recipeSearch(1, ingredient);
         }
@@ -358,7 +358,29 @@ $(document).ready(function () {
             recipeSearch(3, category);
         }
         else if (area != ""){
-            recipeSearch(2, area)
+            recipeSearch(2, area);
         }
+        $("#cardAreaCook").show();
+        // clear forms
+
     });
+
+    $(document).on("click", "#recipe-reset", function(event){
+        // make form disappear, bring back to landing page
+        $("#recipe-form").toggle();
+        $("#cardAreaCook").toggle();
+    });
+
+    $("#cook-form-show").on("click", function(){
+        $("#recipe-form").show();
+        $("#restaurant-form").hide();
+        $("#cardAreaRest").hide();
+    });
+
+    $("#rest-form-show").on("click", function(){
+        $("#restaurant-form").show();
+        $("#recipe-form").hide();
+        $("#cardAreaCook").hide();
+    });
+
 });

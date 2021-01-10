@@ -101,6 +101,23 @@
 #displayCard {
   display: inline-block;
 }
+
+#recipe-form {
+  display: none;
+}
+
+#cardAreaCook{
+  display: none;
+}
+
+#restaurant-form{
+  display: none;
+}
+
+#cardAreaRest{
+  display: none;
+}
+
 /****************************************************************/
 
 /* 
