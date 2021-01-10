@@ -215,8 +215,15 @@ $(document).ready(function () {
         })
             .then(function(response){
                 // store ids in an array (quantity can be decided later)
+                var indexArray = [];
+                for (var i = 0; i < response.meals.length; i ++){
+                    indexArray.push(i);
+                }
                 for (var i = 0; i < Math.min(3, response.meals.length); i++){
-                    idArray.push(response.meals[i].idMeal);
+                    var randIndex = Math.floor(Math.random()*indexArray.length);
+                    var randNum = indexArray[randIndex];
+                    indexArray.splice(randIndex, 1);
+                    idArray.push(response.meals[randNum].idMeal);
                 }
                 console.log(idArray);
                 // search recipes individually by id and add their information to an object
