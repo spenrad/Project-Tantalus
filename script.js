@@ -74,15 +74,15 @@ $(document).ready(function () {
             });
     }   
 
-    function getRestaurants(cityId, cuisineTypeId){
+    function getRestaurants(cityId, searchWord){
         // array to store restaurant objects
         var restaurantArray = [];
         // using the city id from city selected by the user and cuisineTypeId if one was selected
         //      if no cuisine type entered cuisineType should be 0
         var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityId + "&entity_type=city&count=50";
-        if (cuisineTypeId != 0){
-            queryURL+= "&cuisines=";
-            queryURL += cuisineTypeId;
+        if (searchWord != ""){
+            queryURL+= "&q=";
+            queryURL += searchWord;
         }
         queryURL += zomatoKey;
 
@@ -368,7 +368,11 @@ $(document).ready(function () {
 
     $(document).on("click", "#restaurant-submit", function(event){
         event.preventDefault();
-
+        $("#cardAreaRest").empty();
+        console.log("submit button works");
+        getRestaurants(getCityId($("#city-form").val()),$("#cuisine-form").val());
+        // getRestaurants(61, "chinese");
+        $("#cardAreaRest").show();
     });
 
     $(document).on("click", "#recipe-reset", function(event){
@@ -400,5 +404,4 @@ $(document).ready(function () {
         $("#recipe-form").hide();
         $("#cardAreaCook").hide();
     });
-
 });
