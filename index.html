@@ -19,30 +19,99 @@
     <title>Project Tantalus</title>
   </head>
   <body>
-    <section id="landing">
-      <div class="grid-container">
-        <div class="grid-x">
-          <div class="cell">
-            <h2>Project Tantalus</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis sunt?
-            </p>
-          </div>
+    <!-- Top Content -->
+
+    <!-- Main Content Container -->
+    <section class="main-content" id="landing">
+      <!-- Image overlay -->
+      <div class="overlay"></div>
+
+      <!-- Main Content -->
+      <div class="main-div">
+        <!-- Main Text -->
+        <div class="main-text">
+          <h2>Project Tantalus</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis sunt?
+          </p>
         </div>
-        <div class="grid-x btn-div">
-          <div class="cell auto">
-            <a href="media.html" class="btn">Cook Some Shit</a>
-            <a href="media.html" class="btn">Eat the Fuck Out</a>
-          </div>
+
+        <!-- Main Buttons/Links -->
+        <div class="btn-div">
+          <a href="#" class="btn land-btn">Cook Some Shit</a>
+          <a href="#" class="btn land-btn">Eat the Fuck Out</a>
         </div>
       </div>
     </section>
 
+    <!-- Cook Option Content-->
+
+    <!-- Cook Container -->
+    <main class="cook-option">
+      <!-- <div class="grid-container fluid"> -->
+      <!-- / ----- / -->
+
+      <div class="grid-container">
+        <h2>So let's Cook Some Shit</h2>
+        <div class="grid-x grid-padding-x">
+          <div class="cell medium-6">
+            <h4>Seach for a Recipe</h4>
+            <form id="eat-in">
+              <label
+                >Input Text 1
+                <input type="text" placeholder="example text" />
+              </label>
+              <label>
+                Input Text 2
+                <input type="text" placeholder="example text" />
+              </label>
+              <label>
+                Input Text 3
+                <input type="text" placeholder="example text" />
+              </label>
+              <label
+                >Choose a Category:
+                <select>
+                  <option value="" placeholder="choose something"></option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+              </label>
+              <div class="input-group">
+                <input type="submit" class="button" value="Submit" />
+                <input type="submit" class="button" value="Reset" />
+              </div>
+            </form>
+          </div>
+          <div class="cell medium-6" id="randomCard">
+            <div class="card" id="ran-recipe">
+              <div class="card-section">
+                <div class="card-divider">
+                  <h4>Recipe Name (3 Cheese Macaroni)</h4>
+                </div>
+                <img src="./images/temp-bg.jpg" />
+                <div class="card-section">
+                  <!-- <p>Ingredients:</p> -->
+                  <!-- <p>Instructions:</p> -->
+                  <!-- <p><a href="#">Instructional Video</a></p> -->
+                  <!-- <p><a href="#">Full recipe</a></p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+      <div id="cardArea"></div>
+    </main>
+
     <!-- jQuery -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <!-- Foundation Scripts -->
-     <script
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Foundation Scripts -->
+    <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
       integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
       crossorigin="anonymous"
@@ -50,9 +119,7 @@
 
     <!-- Parseley -->
     <script src="parsley.js"></script>
-    <!-- <form data-parsley-validate>
-      ...
-      </form> -->
+    <form data-parsley-validate>...</form>
 
     <!-- Micro Modal -->
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
