@@ -13,6 +13,13 @@
       crossorigin="anonymous"
     />
 
+    <!-- Imported Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400&family=Montserrat:wght@300;400&family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css" />
 
@@ -54,29 +61,31 @@
     <section class="cook-content">
       <!-- / ----- / -->
 
-      <div class="grid-container">
-        <h2>SO LET'S COOK SOME SHIT</h2>
+      <div class="grid-container container-div">
+        <h3>Let's Cook Something</h3>
         <div class="grid-x">
+          <!-- / --- / -->
+
           <div class="cell medium-6 cook-form-div">
-            <h4>Seach for a Recipe</h4>
+            <h4>Seach by Ingredient</h4>
             <!-- / ---- / -->
 
             <!-- Cook form -->
             <form id="eat-in">
               <label
-                >Input Text 1
-                <input type="text" placeholder="example text" />
+                >Ingredient 1
+                <input type="text" placeholder="Text Here" />
               </label>
               <label>
-                Input Text 2
-                <input type="text" placeholder="example text" />
+                Ingredient 2
+                <input type="text" placeholder="Text Here" />
               </label>
               <label>
-                Input Text 3
-                <input type="text" placeholder="example text" />
+                Ingredien 3
+                <input type="text" placeholder="Text Here" />
               </label>
               <!-- / ---- / -->
-
+              <h4> OR </h4>
               <!-- drop down box -->
               <label
                 >Choose a Category:
@@ -99,9 +108,11 @@
           </div>
           <!-- / ---- / -->
 
-          <!-- Random recipe card -->
+          <!-- Random recipe card  container -->
           <div class="cell medium-6" id="randomCard">
-            <h4>Feeling Spontaneous.. Click below!</h4>
+            <h4>May we suggest a recipe</h4>
+
+            <!-- Random recipe card -->
             <div class="card" id="ran-recipe">
               <div class="card-section">
                 <!-- Car Header -->
@@ -110,7 +121,9 @@
                 </div>
 
                 <!-- Card Img -->
-                <img src="./images/temp-bg.jpg" />
+                <img
+                  src="https://www.themealdb.com/images/media/meals/yyrrxr1511816289.jpg"
+                />
 
                 <!-- Card Footer -->
                 <div class="card-section">
@@ -123,43 +136,49 @@
       </div>
 
       <!-- mty div (Seporator) -->
-      <div class="seporator"></div>
+      <div class="seperator"></div>
 
       <!-- Returned card container -->
       <div class="grid-container card-container">
         <div class="grid-x">
-          <div class="cell small-12 medium-3">
+          <div class="cell small-12 medium-4">
+            <div class="card">
+              <div class="card-divider"> Recipe Name </div>
+              <img
+                src="https://www.themealdb.com/images/media/meals/n41ny81608588066.jpg"
+              />
+              <div class="card-section"> </div>
+              <button>More Info</button>
+            </div>
+          </div>
+          <div class="cell small-12 medium-4">
+            <div class="card">
+              <div class="card-divider"> Recipe Name </div>
+              <img
+                src="https://www.themealdb.com/images/media/meals/uuqvwu1504629254.jpg"
+              />
+              <div class="card-section"> </div>
+              <button>More Info</button>
+            </div>
+          </div>
+          <div class="cell small-12 medium-4">
+            <div class="card">
+              <div class="card-divider"> Recipe Name </div>
+              <img
+                src="https://www.themealdb.com/images/media/meals/svprys1511176755.jpg"
+              />
+              <div class="card-section"> </div>
+              <button>More Info</button>
+            </div>
+          </div>
+          <!-- <div class="cell small-12 medium-3">
             <div class="card">
               <div class="card-divider"> Recipe Name </div>
               <img src="./images/french-toast.jpg" />
               <div class="card-section"> </div>
               <button>More Info</button>
             </div>
-          </div>
-          <div class="cell small-12 medium-3">
-            <div class="card">
-              <div class="card-divider"> Recipe Name </div>
-              <img src="./images/french-toast.jpg" />
-              <div class="card-section"> </div>
-              <button>More Info</button>
-            </div>
-          </div>
-          <div class="cell small-12 medium-3">
-            <div class="card">
-              <div class="card-divider"> Recipe Name </div>
-              <img src="./images/french-toast.jpg" />
-              <div class="card-section"> </div>
-              <button>More Info</button>
-            </div>
-          </div>
-          <div class="cell small-12 medium-3">
-            <div class="card">
-              <div class="card-divider"> Recipe Name </div>
-              <img src="./images/french-toast.jpg" />
-              <div class="card-section"> </div>
-              <button>More Info</button>
-            </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <!-- End card container-->
@@ -211,7 +230,7 @@
       </div>
 
       <!-- mty div (Seporator) -->
-      <div class="seporator"></div>
+      <div class="seperator"></div>
 
       <!-- Returned card container -->
       <div class="grid-container card-container">

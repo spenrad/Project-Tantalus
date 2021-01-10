@@ -17,8 +17,15 @@
 }
 
 body {
-  background: rgb(172, 167, 167);
-  color: rgb(31, 31, 31);
+  background: rgb(240, 240, 240);
+  color: rgb(53, 53, 53);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.seperator {
+  width: 100%;
+  height: 20px;
 }
 /***********************************************/
 /*  ---- Landing Page ---- */
@@ -49,7 +56,7 @@ body {
 }
 
 .main-div h2 {
-  font-size: 40px;
+  font-size: 55px;
   color: white;
 }
 
@@ -67,13 +74,13 @@ body {
 }
 
 .btn {
-  background: rgba(27, 114, 165, 0.63);
+  background: darkolivegreen;
   color: white;
   font-size: 16px;
   padding: 10px;
   text-decoration: none;
   border-radius: 10px;
-  box-shadow: 0 1px 0 rgba(27, 114, 165, 0.63);
+  box-shadow: 0 1px 0 darkolivegreen;
   margin: 0.5rem;
 }
 
@@ -83,7 +90,7 @@ body {
 }
 
 .btn:hover {
-  background-color: rgb(27, 114, 165);
+  background-color: olive;
   font-size: 19px;
   opacity: 1;
 }
@@ -95,11 +102,16 @@ body {
 /****************************************************************/
 /* ---- Cook Content ---- */
 
-/* .cook-content {
-  display: none;
-} */
+.cook-content {
+  /* display: none; */
+}
 
-.cook-content h2 {
+.container-div {
+  background: lightgrey;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.cook-content h3 {
   text-align: center;
   margin: 30px;
   padding: 15px;
@@ -129,8 +141,13 @@ body {
 } */
 
 /* --- Card Style --- */
+
 #randomCard h4 {
-  padding-bottom: 10px;
+  margin-left: 15px;
+}
+
+#ran-recipe .card-section {
+  padding: 10px;
 }
 
 #ran-recipe p {
@@ -161,9 +178,10 @@ body {
 } */
 
 .eatOut-container {
+  background: lightgray;
   width: 100%;
   height: 100%;
-  margin: auto;
+  margin: 10px 0;
   padding: 50px;
 }
 
@@ -184,7 +202,9 @@ body {
 }
 
 .card-container {
-  margin: 20px;
+  background: lightgray;
+  width: 100%;
+  margin-top: 10px;
   padding: 10px;
 }
 
