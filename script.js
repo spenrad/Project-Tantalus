@@ -345,8 +345,9 @@ $(document).ready(function () {
     // search by category: breakfast
     // recipeSearch(3, "breakfast");
 
-    $("#recipe-submit").on("click", function(event){
+    $(document).on("click", "#recipe-submit", function(event){
         event.preventDefault();
+        $("#cardAreaCook").empty();
         var ingredient = $("#ingredient").val();
         var category = $("#category").val();
         var area = $("#area").val();
@@ -365,8 +366,14 @@ $(document).ready(function () {
 
     });
 
+    $(document).on("click", "#restaurant-submit", function(event){
+        event.preventDefault();
+
+    });
+
     $(document).on("click", "#recipe-reset", function(event){
         event.preventDefault();
+        $("#cardAreaCook").empty();
         // make form disappear, bring back to landing page
         $("#recipe-form").hide();
         $("#cardAreaCook").hide();
@@ -388,6 +395,7 @@ $(document).ready(function () {
 
     $("#rest-form-show").on("click", function(event){
         event.preventDefault();
+        $("#cardAreaCook").empty();
         $("#restaurant-form").show();
         $("#recipe-form").hide();
         $("#cardAreaCook").hide();
