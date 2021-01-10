@@ -138,17 +138,16 @@ $(document).ready(function () {
                     servings: []
                 };
                 var j = 1;
-                while (j < 21 && response.meals[0]["strIngredient" + j] != " "){
+                while (j < 21 && response.meals[0]["strIngredient" + j] != "" && response.meals[0]["strIngredient" + j] != " " && response.meals[0]["strIngredient" + j] != null){
                     newRecipe.ingredients.push(response.meals[0]["strIngredient" + j]);
                     j+= 1;
                 }
                 var j = 1;
-                while (j < 21 && response.meals[0]["strMeasure" + j] != ""){
+                while (j < 21 && response.meals[0]["strMeasure" + j] != "" && response.meals[0]["strMeasure" + j] != " " && response.meals[0]["strMeasure" + j] != null){
                     newRecipe.servings.push(response.meals[0]["strMeasure" + j]);
                     j+= 1;
                 }
                 console.log(newRecipe);
-                console.log(response);
                 // function for displaying the recipe should be called here
                 return newRecipe;
             });
@@ -235,8 +234,20 @@ $(document).ready(function () {
                                 url: response.meals[0].strYoutube,
                                 img: response.meals[0].strMealThumb,
                                 area: response.meals[0].strArea,
-                                id: response.meals[0].idMeal
+                                id: response.meals[0].idMeal,
+                                ingredients: [],
+                                servings: []
                             };
+                            var j = 1;
+                            while (j < 21 && response.meals[0]["strIngredient" + j] != "" && response.meals[0]["strIngredient" + j] != " " && response.meals[0]["strIngredient" + j] != null) {
+                                newRecipe.ingredients.push(response.meals[0]["strIngredient" + j]);
+                                j += 1;
+                            }
+                            var j = 1;
+                            while (j < 21 && response.meals[0]["strMeasure" + j] != "" && response.meals[0]["strMeasure" + j] != " " && response.meals[0]["strMeasure" + j] != null) {
+                                newRecipe.servings.push(response.meals[0]["strMeasure" + j]);
+                                j += 1;
+                            }
                             recipeArray.push(newRecipe);
                         });
                 }
@@ -250,14 +261,14 @@ $(document).ready(function () {
 
     // getRestaurants(61,25);
     
-    randomRecipe();
+    // randomRecipe();
 
     // getCategory();
 
     // getArea();
 
     // search by ingredient: beef
-    // recipeSearch(1, "beef");
+    recipeSearch(1, "chicken");
 
     // search by area: chinese
     // recipeSearch(2, "chinese");
