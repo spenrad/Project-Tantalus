@@ -95,9 +95,9 @@ body {
 /****************************************************************/
 /* ---- Cook Content ---- */
 
-.cook-content {
-  /* display: none; */
-}
+/* .cook-content {
+  display: none;
+} */
 
 .cook-content h2 {
   text-align: center;
@@ -156,9 +156,9 @@ body {
 /*****************************************************************/
 /* ---- Eat Out Content ---- */
 
-.eatOut {
-  /* display: none; */
-}
+/* .eatOut {
+  display: none;
+} */
 
 .eatOut-container {
   width: 100%;
