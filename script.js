@@ -118,18 +118,29 @@ $(document).ready(function () {
                  
                 // placing restaurant info in cards   
                 var html = `
-                <div class="card" id="displayCard" style="width: 300px;">
-                <div class="card-divider">
-                ${restaurantArray[i].name}
-                </div>
-                <img src="${restaurantArray[i].featuredImg}">
+                <div class="cell small-12 medium-3">
+              <div class="card">
+                <div class="card-divider">${restaurantArray[i].name}</div>
+                <img src="${restaurantArray[i].featuredImg}" />
                 <div class="card-section">
-                  <p>${restaurantArray[i].location}</p>
-                  <p>Hours: ${restaurantArray[i].hours}</p>
-                  <p>Rating: ${restaurantArray[i].rating} / 5</p>
+                <p>Hours: ${restaurantArray[i].hours}</p>
+                <p>Rating: ${restaurantArray[i].rating} / 5</p>
                 </div>
+                <button>More Info</button>
               </div>
-              `;
+            </div>`;`
+              <div class="cell small-12 medium-3">
+            <div class="card">
+              <div class="card-divider">${restaurantArray[i].name}</div>
+              <img src="${restaurantArray[i].featuredImg}" />
+              <div class="card-section">
+              <p>Hours: ${restaurantArray[i].hours}</p>
+              <p>Rating: ${restaurantArray[i].rating} / 5</p>
+              </div>
+              <button>More Info</button>
+            </div>
+          </div>`
+              
                 $('#cardAreaRest').append(html);
             }
             // checking for more info to pull
@@ -256,7 +267,7 @@ $(document).ready(function () {
                     indexArray.push(i);
                 }
                 
-                for (var i = 0; i < Math.min(3, response.meals.length); i++){
+                for (var i = 0; i < Math.min(6, response.meals.length); i++){
                     var randIndex = Math.floor(Math.random()*indexArray.length);
                     var randNum = indexArray[randIndex];
                     indexArray.splice(randIndex, 1);
@@ -301,8 +312,6 @@ $(document).ready(function () {
                           <div class="card-divider">${newRecipe.name}</div>
                           <img src="${newRecipe.img}">
                           <div class="card-section">
-                            <p>Hours:</p>
-                            <p>Ratings:</p>
                           </div>
                           <button>More Info</button>
                         </div>
