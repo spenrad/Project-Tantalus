@@ -366,18 +366,28 @@ $(document).ready(function () {
     });
 
     $(document).on("click", "#recipe-reset", function(event){
+        event.preventDefault();
         // make form disappear, bring back to landing page
-        $("#recipe-form").toggle();
-        $("#cardAreaCook").toggle();
+        $("#recipe-form").hide();
+        $("#cardAreaCook").hide();
     });
 
-    $("#cook-form-show").on("click", function(){
+    $(document).on("click", "#restaurant-reset", function(event){
+        event.preventDefault();
+        // make form disappear, bring back to landing page
+        $("#restaurant-form").hide();
+        $("#cardAreaRest").hide();
+    });
+
+    $("#cook-form-show").on("click", function(event){
+        event.preventDefault();
         $("#recipe-form").show();
         $("#restaurant-form").hide();
         $("#cardAreaRest").hide();
     });
 
-    $("#rest-form-show").on("click", function(){
+    $("#rest-form-show").on("click", function(event){
+        event.preventDefault();
         $("#restaurant-form").show();
         $("#recipe-form").hide();
         $("#cardAreaCook").hide();
