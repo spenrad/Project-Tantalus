@@ -345,10 +345,20 @@ $(document).ready(function () {
     // search by category: breakfast
     // recipeSearch(3, "breakfast");
 
-    // ("#recipe-submit").on("click", function(event){
-    //     event.preventDefault();
-    //     var ingredient = ;
-    //     var category = ;
-    //     var area = ;
-    // })
+    $("#recipe-submit").on("click", function(event){
+        event.preventDefault();
+        var ingredient = $("#ingredient").val();
+        var category = $("#category").val();
+        var area = $("#area").val();
+        console.log(category + ingredient + area);
+        if (ingredient != ""){
+            recipeSearch(1, ingredient);
+        }
+        else if (category != ""){
+            recipeSearch(3, category);
+        }
+        else if (area != ""){
+            recipeSearch(2, area)
+        }
+    })
 });
