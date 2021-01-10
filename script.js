@@ -360,5 +360,5 @@ $(document).ready(function () {
         else if (area != ""){
             recipeSearch(2, area)
         }
-    })
+    });
 });
