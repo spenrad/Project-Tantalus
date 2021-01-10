@@ -60,19 +60,16 @@
             <form id="eat-in">
               <label
                 >Search by Main Ingredient:
-                <input type="text" placeholder="Input main ingredient" />
+                <input type="text" placeholder="Input main ingredient" id = "ingredient" />
               <label
                 >Choose by Meal Type:
-                <select>
+                <select id = "category">
                   <option value="" placeholder="choose something"></option>
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
                 </select>
               </label>
               <label
                 >Choose by Cuisine Type:
-                <select>
+                <select id = "area">
                   <option value="" placeholder="choose something"></option>
                   <option value="option1">Option 1</option>
                   <option value="option2">Option 2</option>
@@ -80,7 +77,7 @@
                 </select>
               </label>
               <div class="input-group">
-                <input type="submit" class="button" value="Submit" />
+                <input type="submit" class="button" value="Submit" id = "recipe-submit" />
                 <input type="submit" class="button" value="Reset" />
               </div>
             </form>
@@ -124,8 +121,8 @@
                 <input type="text" placeholder="Cousine type" />
               </label>
               <div class="input-group">
-                <input type="submit" class="button" value="Submit" />
-                <input type="submit" class="button" value="Reset" />
+                <input type="submit" class="button" value="Submit" id = "restaurant-submit"/>
+                <input type="submit" class="button" value="Reset"/>
               </div>
             </form>
           </div>

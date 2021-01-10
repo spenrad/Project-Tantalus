@@ -198,6 +198,10 @@ $(document).ready(function () {
             .then(function(response){
                 for (i = 0; i < response.categories.length; i++){
                     categoryArray.push(response.categories[i].strCategory);
+                    var newOption = $("<option>");
+                    newOption.attr("value", categoryArray[categoryArray.length-1]);
+                    newOption.text(categoryArray[categoryArray.length-1]);
+                    $("#category").append(newOption);
                 }
                 console.log(categoryArray);
                 console.log(response);
@@ -318,15 +322,15 @@ $(document).ready(function () {
             });
     }
     
-    getCityId("london");
+    // getCityId("london");
 
-    getRestaurants(61,25);
+    // getRestaurants(61,25);
     
-    randomRecipe();
+    // randomRecipe();
 
     getCategory();
 
-    getArea();
+    // getArea();
 
     // search by ingredient: beef
     // recipeSearch(1, "beef");
@@ -335,5 +339,12 @@ $(document).ready(function () {
     // recipeSearch(2, "chinese");
 
     // search by category: breakfast
-    recipeSearch(3, "breakfast");
+    // recipeSearch(3, "breakfast");
+
+    // ("#recipe-submit").on("click", function(event){
+    //     event.preventDefault();
+    //     var ingredient = ;
+    //     var category = ;
+    //     var area = ;
+    // })
 });
