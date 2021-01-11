@@ -25,9 +25,38 @@ Project Tantalus is a resource to to search for recipes or restaurants. Restaura
 
 
 ## Code Snippet
+This code snippet shows the html that creates the modal from the micromodal library.
 
-
-```javascript
+```html
+    <div class="modal micromodal-slide" id="modal-cook0" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+         <!-- Body of Modal for Recipes -->
+         <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-cook0-title">
+          <header class="modal__header">
+            <h2 class="modal__title" id="modal-cook0-title">
+            </h2>
+            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+          </header>
+          <main class="modal__content" id="modal-cook0-content">
+            <div class="grid-x">
+              <div class="cell small-12 medium-4">
+                <ol class= "recipeStr" id="recipeStr0">
+                </ol>
+              </div>
+              <div class= "cell small-12 medium-7">
+                <p class= "instructionStr" id="instructionStr0">
+                </p>
+             </div>
+          </div>
+          </main>
+          <footer class="modal__footer">
+            <button class="modal__btn modal__btn-primary">Continue</button>
+            <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+          </footer>
+        </div>
+        <!-- End Body of Modal for Recipes -->
+      </div>
+    </div>
 
 ```
 
