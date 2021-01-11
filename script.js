@@ -114,7 +114,7 @@ MicroModal.init();
                         menuURL: response.restaurants[randNum].restaurant.menu_url,
                         hours: response.restaurants[randNum].restaurant.timings,
                         rating: response.restaurants[randNum].restaurant.user_rating.aggregate_rating,
-
+                        priceRange: response.restaurants[randNum].restaurant.price_range
                     };
                     restaurantArray.push(restaurantObject);
                  
@@ -124,10 +124,19 @@ MicroModal.init();
                 $("#hoursRest"+i).text("Hours: " + restaurantObject.hours);
                 $("#ratingRest"+i).text("Rating: " + restaurantObject.rating + " / 5");
                 $("#modal-rest"+i+"-title").text(restaurantObject.name);
+                $("#priceRange"+i).text(restaurantObject.priceRange);
+                $("#locationRest"+i).text(restaurantObject.location);
+                $("#phoneRest"+i).text(restaurantObject.phone);
+                $("#hoursRest"+i).text(restaurantObject.hours);
+                $("#urlRest"+i).attr({href:restaurantObject.url, target:"_blank"});
+                $("#menuRest"+i).attr({href:restaurantObject.menuURL, target:"_blank"});
+
+
 
             }
             // checking for more info to pull
                 console.log(restaurantArray);
+                console.log(response);
                 // the function call for displaying the restaurants should go here
                 return restaurantArray;
             });
@@ -325,7 +334,7 @@ MicroModal.init();
     
         }
     
-    // getCityId("london");
+    // getCityId();
 
     // getRestaurants(61,25);
     
