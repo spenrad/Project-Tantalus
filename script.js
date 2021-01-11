@@ -126,6 +126,8 @@ $(document).ready(function () {
               .aggregate_rating,
         };
         restaurantArray.push(restaurantObject);
+        $("#headerRest" + i).text(restaurantObject.name);
+        $("#imgRest" + i).attr("src", restaurantObject.featuredImg);
       }
       // checking for more info to pull
       console.log(response);
@@ -256,13 +258,13 @@ $(document).ready(function () {
         indexArray.push(i);
       }
 
-      for (var i = 0; i < Math.min(6, response.meals.length); i++) {
+      for (var i = 0; i < Math.min(8, response.meals.length); i++) {
         var randIndex = Math.floor(Math.random() * indexArray.length);
         var randNum = indexArray[randIndex];
         indexArray.splice(randIndex, 1);
         idArray.push(response.meals[randNum].idMeal);
       }
-      console.log(idArray);
+      // console.log(idArray);
       // search recipes individually by id and add their information to an object
       // add the object to an array
       for (var i = 0; i < idArray.length; i++) {
@@ -304,10 +306,16 @@ $(document).ready(function () {
             j += 1;
           }
           recipeArray.push(newRecipe);
-          console.log(newRecipe.ingredients[i] + "- " + newRecipe.servings[i]);
+          // console.log(newRecipe.ingredients[i] + "- " + newRecipe.servings[i]);
+          console.log(recipeArray);
+          for (var k = 0; k < recipeArray.length; k++) {
+            $("#nameCook" + k).text(recipeArray[k].name);
+            $("#imgCook" + k).attr("src", recipeArray[k].img);
+          }
         });
       }
-      console.log(recipeArray);
+
+      // console.log(recipeArray);
 
       // recipes should be rendered here
       return recipeArray;
@@ -333,5 +341,3 @@ $(document).ready(function () {
   // search by category: breakfast
   recipeSearch(3, "breakfast");
 });
-
-
