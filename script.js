@@ -328,6 +328,12 @@ $(document).ready(function () {
     // search by category: breakfast
     // recipeSearch(3, "breakfast");
 
+    function scrollTo(area) {
+        $('html,body').animate({
+            scrollTop: $(area).offset().top},
+            'slow');
+    }
+    
     $(document).on("click", "#recipe-submit", function(event){
         event.preventDefault();
         $("#cardAreaCook").hide();
@@ -345,15 +351,16 @@ $(document).ready(function () {
             recipeSearch(2, area);
         }
         $("#cook-cards").show();
+        scrollTo("#cook-cards");
         // clear forms
     });
 
     $(document).on("click", "#restaurant-submit", function(event){
         event.preventDefault();
-        console.log("submit button works");
         getRestaurants(getCityId($("#city-form").val()),$("#cuisine-form").val());
         // getRestaurants(61, "chinese");
         $("#rest-cards").show();
+        scrollTo("#rest-cards");
     });
 
     $(document).on("click", "#recipe-reset", function(event){
@@ -375,6 +382,7 @@ $(document).ready(function () {
         $(".cook-content").show();
         $(".eatOut").hide();
         $("#rest-cards").hide();
+        scrollTo(".cook-content");
     });
 
     $("#rest-form-show").on("click", function(event){
@@ -382,5 +390,6 @@ $(document).ready(function () {
         $(".eatOut").show();
         $(".cook-content").hide();
         $("#cook-cards").hide();
+        scrollTo(".eatOut");
     });
 });
