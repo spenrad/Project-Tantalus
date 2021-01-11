@@ -123,6 +123,7 @@ MicroModal.init();
                 $("#imgRest"+i).attr("src", restaurantObject.featuredImg);
                 $("#hoursRest"+i).text("Hours: " + restaurantObject.hours);
                 $("#ratingRest"+i).text("Rating: " + restaurantObject.rating + " / 5");
+                $("#testerRester"+i).text(restaurantObject.name);
 
             }
             // checking for more info to pull
@@ -300,6 +301,7 @@ MicroModal.init();
                             for (var k = 0; k < recipeArray.length; k++) {
                                 $("#nameCook" + k).text(recipeArray[k].name);
                                 $("#imgCook" + k).attr("src", recipeArray[k].img);
+                                $("#recipeString" + k).text(recipeArray[k].name);
                         }
                         console.log(response);
                     });
