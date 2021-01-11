@@ -28,7 +28,7 @@ Project Tantalus is a resource to to search for recipes or restaurants. Restaura
 
 
 ```javascript
- 
+
 ```
 
 ## Authors
@@ -41,10 +41,10 @@ Project Tantalus is a resource to to search for recipes or restaurants. Restaura
 ## Contact Information
 
 - [Github: Jaja Brown](https://github.com/jbrown827)
-- [Linkedin: Jaja Brown]()
+- [Linkedin: Jaja Brown](https://www.linkedin.com/in/jaja-brown-a42261201/)
 
 - [Github: Raffi Lepejian](https://github.com/rslepejian)
 - [Linkedin: Raffi Lepejian](https://linkedin.com/in/raffi-lepejian-071876153)
 
 - [Github: Spencer  Christy](https://github.com/spenrad)
-- [Linkedin: Spender Christy]()
+- [Linkedin: Spender Christy](https://www.linkedin.com/in/spencer-christy-543b84b3/)
