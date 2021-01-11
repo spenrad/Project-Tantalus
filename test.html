@@ -121,6 +121,9 @@
                 <div class="card-section">
                   <button id="btn-retry">Try Another Recipe</button>
                 </div>
+                <div class="card-section">
+                  <button id="btn-getRandom" data-micromodal-trigger="modal-random">Looks Good to Me</button>
+                </div>
               </div>
             </div>
           </div>
@@ -748,6 +751,31 @@
           </header>
           <main class="modal__content" id="modal-rest7-content">
             <p id="testerRester7">
+            </p>
+          </main>
+          <footer class="modal__footer">
+            <button class="modal__btn modal__btn-primary">Continue</button>
+            <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+          </footer>
+        </div>
+        <!-- End of Body of Modal for Restaurants --> 
+       </div>
+     </div>
+
+
+     <!-- Modal 17 RANDOM RECIPES MODAL-->
+    <div class="modal micromodal-slide" id="modal-random" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <!-- Body of Modal for Restaurants -->
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-random-title">
+          <header class="modal__header">
+            <h2 class="modal__title" id="modal-random-title">
+              Micromodal
+            </h2>
+            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+          </header>
+          <main class="modal__content" id="modal-random-content">
+            <p id="randomName">
             </p>
           </main>
           <footer class="modal__footer">

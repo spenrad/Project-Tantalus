@@ -169,6 +169,7 @@ MicroModal.init();
 
                 $('#randMealName').text(newRecipe.name);
                 $('#randMeal').attr("src", newRecipe.img);
+                $('#randomName').text(newRecipe.name);
                 // recipe strings goes in modal
                 // youtube link in modal
                 // source link in modal
@@ -313,7 +314,8 @@ MicroModal.init();
                 // recipes should be rendered here
                 return recipeArray;
             });
-    }
+    
+        }
     
     // getCityId("london");
 
@@ -366,8 +368,14 @@ MicroModal.init();
         // clear forms
     });
     
-    // $(document).on("click", "#btn-retry", console.log("This button works"));
 
+    // randomizes another recipe to be displayed
+    $(document).on("click", "#btn-retry", function(event) {
+        event.preventDefault();
+        console.log("this button works")
+        randomRecipe();
+    });
+    
     $(document).on("click", "#restaurant-submit", function(event){
         event.preventDefault();
         getRestaurants(getCityId($("#city-form").val()),$("#cuisine-form").val());

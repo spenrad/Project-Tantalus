@@ -171,7 +171,7 @@ body {
   cursor: pointer;
 }
 
-#btn-retry {
+#btn-retry, #btn-getRandom {
   background: darkolivegreen;
   height: 50px;
   width: 100%;
