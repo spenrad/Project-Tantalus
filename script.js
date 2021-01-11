@@ -22,12 +22,12 @@ MicroModal.init();
     //      can also put in a category or type
     //          get a list of recipes with those features
     //          get recipe id for more info
-
+    var totalIngredients;
     var zomatoKey = "&apikey=157a4da6ccbad6e7ff675d7496616a8a";
     // this variable is global so it can be populated in get cuisines and used in the restaurant search function
     var cuisineIdArray = [];
 
-    function getCityId(cityName){
+    async function getCityId(cityName){
         // replace spaces in city name with %20 for zomato
         cityName = cityName.replaceAll(" ", "%20");
 
@@ -41,7 +41,7 @@ MicroModal.init();
             //upon api response
             .then(function(response) {
                 var id = response.location_suggestions[0].id;
-                // console.log(id);
+                console.log(id);
 
                 // call getCuisines
                 getCuisines(id);
@@ -76,7 +76,7 @@ MicroModal.init();
             });
     }   
 
-    function getRestaurants(cityId, searchWord){
+    async function getRestaurants(cityId, searchWord){
         // array to store restaurant objects
         var restaurantArray = [];
         // using the city id from city selected by the user and cuisineTypeId if one was selected
@@ -87,7 +87,7 @@ MicroModal.init();
             queryURL += searchWord;
         }
         queryURL += zomatoKey;
-
+        console.log("getting restaurants");
         // use zomato search endpoint and return an array of restaurant objects
         $.ajax({
             url: queryURL,
@@ -313,7 +313,7 @@ MicroModal.init();
                             
                             for (var k = 0; k < recipeArray.length; k++) {
                                 var ingredientsStr = newRecipe.servings[k] + "- " + newRecipe.ingredients[k]
-                                var totalIngredients = $("<li>").text(ingredientsStr);
+                                totalIngredients = $("<li>").text(ingredientsStr);
                                 $("#nameCook" + k).text(recipeArray[k].name);
                                 $("#imgCook" + k).attr("src", recipeArray[k].img);
                                 $("#modal-cook"+k+"-title").text(recipeArray[k].name);
@@ -392,9 +392,10 @@ MicroModal.init();
         randomRecipe();
     });
     
-    $(document).on("click", "#restaurant-submit", function(event){
+    $(document).on("click", "#restaurant-submit", async function(event){
         event.preventDefault();
-        getRestaurants(getCityId($("#city-form").val()),$("#cuisine-form").val());
+        var cityId = await getCityId ($("#city-form").val());
+        getRestaurants(cityId,$("#cuisine-form").val());
         // getRestaurants(61, "chinese");
         $("#rest-cards").show();
         scrollTo("#rest-cards");
