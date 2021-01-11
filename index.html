@@ -42,8 +42,8 @@
 
         <!-- Main Buttons/Links -->
         <div class="btn-div">
-          <a href="#" class="btn land-btn">Cook Some Shit</a>
-          <a href="#" class="btn land-btn">Eat the Fuck Out</a>
+          <a href="#" class="btn land-btn" id = "cook-form-show">Cook Some Shit</a>
+          <a href="#" class="btn land-btn" id = "rest-form-show">Eat the Fuck Out</a>
         </div>
       </div>
     </section>
@@ -57,22 +57,23 @@
     <section class="cook-content">
       <!-- / ----- / -->
 
-      <div class="grid-container">
-        <h2>SO LET'S COOK SOME SHIT</h2>
-        <div class="grid-x">
-          <div class="cell medium-6 cook-form-div">
+      <div class="grid-container" id = "recipe-form">
+        <h2>So let's Cook Some Shit</h2>
+        <div class="grid-x grid-padding-x">
+          <div class="cell medium-6">
             <h4>Seach for a Recipe</h4>
             <!-- / ---- / -->
 
             <!-- Cook form -->
             <form id="eat-in">
               <label
-                >Input Text 1
-                <input type="text" placeholder="example text" />
-              </label>
-              <label>
-                Input Text 2
-                <input type="text" placeholder="example text" />
+                >Search by Main Ingredient:
+                <input type="text" placeholder="Input main ingredient" id = "ingredient" />
+              <label
+                >Choose by Meal Type:
+                <select id = "category">
+                  <option value="" placeholder="choose something"></option>
+                </select>
               </label>
               <label>
                 Input Text 3
@@ -82,20 +83,14 @@
 
               <!-- drop down box -->
               <label
-                >Choose a Category:
-                <select>
+                >Choose by Cuisine Type:
+                <select id = "area">
                   <option value="" placeholder="choose something"></option>
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
                 </select>
               </label>
-              <!-- / ---- / -->
-
-              <!-- cook form buttons -->
-              <div class="input-group eatIn-btn-div">
-                <button type="submit" class="submit-btn">Submit</button>
-                <button type="submit" class="reset-btn">Reset</button>
+              <div class="input-group">
+                <input type="submit" class="button" value="Submit" id = "recipe-submit" />
+                <input type="submit" class="button" value="Reset" id = "recipe-reset"/>
               </div>
             </form>
             <!-- End of cook form -->
@@ -124,13 +119,103 @@
           </div>
         </div>
       </div>
+      <div id="cardAreaCook"><div class="cell small-12 medium-3">
+        <div class="card">
+          <div class="card-divider" id="nameCook0">Name</div>
+          <img src="#" id="imgCook0">
+          <div class="card-section">
+          </div>
+          <button id="recipeButton" data-micromodal-trigger="modal-2">More Info</button>
+        </div>
+      </div>
+      <div class="cell small-12 medium-3">
+        <div class="card">
+          <div class="card-divider" id="nameCook1">Name</div>
+          <img src="#" id="imgCook1">
+          <div class="card-section">
+          </div>
+          <button id="recipeButton" data-micromodal-trigger="modal-2">More Info</button>
+        </div>
+      </div>
+      <div class="cell small-12 medium-3">
+        <div class="card">
+          <div class="card-divider" id="nameCook2">Name</div>
+          <img src="#" id="imgCook2">
+          <div class="card-section">
+          </div>
+          <button id="recipeButton" data-micromodal-trigger="modal-2">More Info</button>
+        </div>
+      </div>
+      <div class="cell small-12 medium-3">
+        <div class="card">
+          <div class="card-divider" id="nameCook3">Name</div>
+          <img src="#" id="imgCook3">
+          <div class="card-section">
+          </div>
+          <button id="recipeButton" data-micromodal-trigger="modal-2">More Info</button>
+        </div>
+      </div>
+      <div class="cell small-12 medium-3">
+        <div class="card">
+          <div class="card-divider" id="nameCook4">Name</div>
+          <img src="#" id="imgCook4">
+          <div class="card-section">
+          </div>
+          <button id="recipeButton" data-micromodal-trigger="modal-2">More Info</button>
+        </div>
+      </div>
+      <div class="cell small-12 medium-3">
+        <div class="card">
+          <div class="card-divider" id="nameCook5">Name</div>
+          <img src="#" id="imgCook5">
+          <div class="card-section">
+          </div>
+          <button id="recipeButton" data-micromodal-trigger="modal-2">More Info</button>
+        </div>
+      </div>
+      <div class="cell small-12 medium-3">
+        <div class="card">
+          <div class="card-divider" id="nameCook6">Name</div>
+          <img src="#" id="imgCook6">
+          <div class="card-section">
+          </div>
+          <button id="recipeButton" data-micromodal-trigger="modal-2">More Info</button>
+        </div>
+      </div>
+      <div class="cell small-12 medium-3">
+        <div class="card">
+          <div class="card-divider" id="nameCook7">Name</div>
+          <img src="#" id="imgCook7">
+          <div class="card-section">
+          </div>
+          <button id="recipeButton" data-micromodal-trigger="modal-2">More Info</button>
+        </div>
+      </div></div>
+    </main>
 
-      <!-- mty div (Seporator) -->
-      <div class="seporator"></div>
-
-      <!-- Returned card container -->
-      <div class="grid-container card-container">
-        <div class="grid-x" id="cardAreaCook">
+  <div class="grid-container" id = "restaurant-form">
+    <section class="eat-out">
+      <div class="grid-conatiner">
+        <h2>THE EASY APPROACH</h2>
+        <div class="grid-x grid-padding-x">
+          <div class="cell medium-6">
+            <h4>Seach for a Recipe</h4>
+            <form id="eat-in">
+              <label
+                >Enter your location:
+                <input type="text" placeholder="Your location" id = "city-form"/>
+              </label>
+              <label>
+                Select a cuisine type:
+                <input type="text" placeholder="Cuisine type" id = "cuisine-form"/>
+              </label>
+              <div class="input-group">
+                <input type="submit" class="button" value="Submit" id = "restaurant-submit"/>
+                <input type="submit" class="button" value="Reset" id = "restaurant-reset"/>
+              </div>
+              <button id="recipeButton" data-micromodal-trigger="modal-2">More Info</button>
+            </div>
+          </div>
           <div class="cell small-12 medium-3">
             <div class="card">
               <div class="card-divider" id="nameCook0">Name</div>

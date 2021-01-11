@@ -122,6 +122,24 @@ body {
   cursor: pointer;
 }
 
+#recipe-form {
+  display: none;
+}
+
+#cardAreaCook{
+  display: none;
+}
+
+#restaurant-form{
+  display: none;
+}
+
+#cardAreaRest{
+  display: none;
+}
+
+/****************************************************************/
+
 .submit-btn:hover,
 .reset-btn:hover {
   background: olivedrab;
