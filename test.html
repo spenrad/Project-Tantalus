@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Foundation CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+
+    <!-- Imported Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400&family=Montserrat:wght@300;400&family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Project Tantalus</title>
+  </head>
+  <body>
+    <!-- Top Content -->
+
+    <!-- Main Content Container -->
+    <section class="main-content" id="landing">
+      <!-- Image overlay -->
+      <div class="overlay"></div>
+
+      <!-- Main Content -->
+      <div class="main-div">
+        <!-- Main Text -->
+        <div class="main-text">
+          <h2>Project Tantalus</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis sunt?
+          </p>
+        </div>
+
+        <!-- Main Buttons/Links -->
+        <div class="btn-div">
+            <a href="#" class="btn land-btn" id = "cook-form-show">Cook Some Shit</a>
+            <a href="#" class="btn land-btn" id = "rest-form-show">Eat the Fuck Out</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Content End -->
+
+    <!-- / ---- / -->
+
+    <!-- Cook Option Content-->
+    <!-- Cook Container -->
+    <section class="cook-content">
+      <!-- / ----- / -->
+
+      <div class="grid-container container-div">
+        <h3>Let's Cook Something</h3>
+        <div class="grid-x">
+          <!-- / --- / -->
+
+          <div class="cell medium-6 cook-form-div">
+            <h4>Seach by Ingredient</h4>
+            <!-- / ---- / -->
+
+            <!-- Cook form -->
+            <form id="eat-in">
+                <label
+                >Search by Main Ingredient:
+                <input type="text" placeholder="Input main ingredient" id = "ingredient" />
+              <label
+                >Choose by Meal Type:
+                <select id = "category">
+                  <option value="" placeholder="choose something"></option>
+                </select>
+              </label>
+              <label
+                >Choose by Cuisine Type:
+                <select id = "area">
+                  <option value="" placeholder="choose something"></option>
+                </select>
+              </label>
+              <!-- / ---- / -->
+            
+
+              <!-- cook form buttons -->
+              <div class="input-group eatIn-btn-div">
+                <button type="submit" class="submit-btn" id ="recipe-submit">Submit</button>
+                <button type="submit" class="reset-btn" id = "recipe-reset">Reset</button>
+              </div>
+            </form>
+            <!-- End of cook form -->
+          </div>
+          <!-- / ---- / -->
+
+          <!-- Random recipe card  container -->
+          <div class="cell medium-6" id="randomCard">
+            <h4>May we suggest a recipe</h4>
+
+            <!-- Random recipe card -->
+            <div class="card" id="ran-recipe">
+              <div class="card-section">
+                <!-- Car Header -->
+                <div class="card-divider">
+                  <p id="randMealName">Recipe Name</p>
+                </div>
+
+                <!-- Card Img -->
+                <img
+                  src="#" id="randMeal"
+                />
+
+                <!-- Card Footer -->
+                <div class="card-section">
+                  <button id="btn-retry">Try Another Recipe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- mty div (Seporator) -->
+      <div class="seperator"></div>
+
+      <!-- Returned card container -->
+      <div class="grid-container card-container" id = "cook-cards">
+        <div class="grid-x">
+          <div class="cell small-12 medium-4">
+            <div class="card">
+              <div class="card-divider"> Recipe Name </div>
+              <img
+                src="https://www.themealdb.com/images/media/meals/n41ny81608588066.jpg"
+              />
+              <div class="card-section"> </div>
+              <button>More Info</button>
+            </div>
+          </div>
+          <div class="cell small-12 medium-4">
+            <div class="card">
+              <div class="card-divider"> Recipe Name </div>
+              <img
+                src="https://www.themealdb.com/images/media/meals/uuqvwu1504629254.jpg"
+              />
+              <div class="card-section"> </div>
+              <button>More Info</button>
+            </div>
+          </div>
+          <div class="cell small-12 medium-4">
+            <div class="card">
+              <div class="card-divider"> Recipe Name </div>
+              <img
+                src="https://www.themealdb.com/images/media/meals/svprys1511176755.jpg"
+              />
+              <div class="card-section"> </div>
+              <button>More Info</button>
+            </div>
+          </div>
+          <!-- <div class="cell small-12 medium-3">
+            <div class="card">
+              <div class="card-divider"> Recipe Name </div>
+              <img src="./images/french-toast.jpg" />
+              <div class="card-section"> </div>
+              <button>More Info</button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <!-- End card container-->
+    </section>
+    <!-- End of Cook Option -->
+
+    <!-- / ---- / -->
+
+    <!-- Eat Out Content -->
+    <!-- Eat Out main container -->
+    <section class="eatOut">
+      <div class="grid-conatiner eatOut-container">
+        <h2>SOMEONE'S BEING LAZY</h2>
+
+        <!-- Content container  -->
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">
+            <!-- Mty div for centering main col -->
+            <div class="cell medium-2"></div>
+
+            <!-- Main Col -->
+            <div class="cell medium-8">
+              <h4>Search for a Local Restaurant</h4>
+
+              <!-- Restaurant search form -->
+              <form id="eat-out">
+                <label
+                  >Enter Your Location:
+                  <input type="text" placeholder="Text here" id ="city-form" />
+                </label>
+                <label
+                  >Choose Cuisine Type:
+                  <input type="text" placeholder="Text here" id = "cuisine-form"/>
+                </label>
+
+                <!-- Rest search buttons -->
+                <div class="input-group">
+                  <button type="submit" class="submit-btn" id = "restaurant-submit">Submit</button>
+                  <button type="submit" class="reset-btn" id = "restaurant-reset">Reset</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Mty div for centering main col -->
+            <div class="cell medium-2"></div>
+          </div>
+        </div>
+        <!-- End conent container -->
+      </div>
+
+      <!-- mty div (Seporator) -->
+      <div class="seperator"></div>
+
+      <!-- Returned card container -->
+      <div class="grid-container card-container" id = "rest-cards">
+        <div class="grid-x">
+          <div class="cell small-12 medium-3">
+            <div class="card">
+              <div class="card-divider"> Restaurant Name </div>
+              <img src="./images/french-toast.jpg" />
+              <div class="card-section">
+                <p>Hours:</p>
+                <p>Ratings:</p>
+              </div>
+              <button>More Info</button>
+            </div>
+          </div>
+          <div class="cell small-12 medium-3">
+            <div class="card">
+              <div class="card-divider"> Restaurant Name </div>
+              <img src="./images/french-toast.jpg" />
+              <div class="card-section">
+                <p>Hours:</p>
+                <p>Ratings:</p>
+              </div>
+              <button>More Info</button>
+            </div>
+          </div>
+          <div class="cell small-12 medium-3">
+            <div class="card">
+              <div class="card-divider"> Restaurant Name </div>
+              <img src="./images/french-toast.jpg" />
+              <div class="card-section">
+                <p>Hours:</p>
+                <p>Ratings:</p>
+              </div>
+              <button>More Info</button>
+            </div>
+          </div>
+          <div class="cell small-12 medium-3">
+            <div class="card">
+              <div class="card-divider"> Restaurant Name </div>
+              <img src="./images/french-toast.jpg" />
+              <div class="card-section">
+                <p>Hours:</p>
+                <p>Ratings:</p>
+              </div>
+              <button>More Info</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End card container-->
+    </section>
+    <!-- End of Content -->
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Foundation Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Parseley
+    <script src="parsley.js"></script>
+    <form data-parsley-validate> ... </form> -->
+
+    <!-- Micro Modal -->
+    <!-- <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script> -->
+
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>

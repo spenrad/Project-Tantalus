@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-MicroModal.init();
+// MicroModal.init();
 
 // Zomato
     // put in a city
@@ -119,23 +119,9 @@ MicroModal.init();
                     restaurantArray.push(restaurantObject);
                  
                 // placing restaurant info in cards   
-                var html = `
-                <div class="card" id="displayCard" style="width: 300px;">
-                <div class="card-divider">
-                ${restaurantArray[i].name}
-                </div>
-                <img src="${restaurantArray[i].featuredImg}">
-                <div class="card-section">
-                  <p>${restaurantArray[i].location}</p>
-                  <p>Hours: ${restaurantArray[i].hours}</p>
-                  <p>Rating: ${restaurantArray[i].rating} / 5</p>
-                </div>
-              </div>
-              `;
-                $('#cardAreaRest').append(html);
             }
             // checking for more info to pull
-                // console.log(response);
+                console.log(restaurantArray);
                 // the function call for displaying the restaurants should go here
                 return restaurantArray;
             });
@@ -183,7 +169,7 @@ MicroModal.init();
 
 
                 // console.log(newRecipe);
-                // console.log(response);
+                console.log(response);
                 // function for displaying the recipe should be called here
                 return newRecipe;
             });
@@ -291,7 +277,8 @@ MicroModal.init();
                                 id: response.meals[0].idMeal,
                                 img: response.meals[0].strMealThumb, 
                                 ingredients: [],
-                                servings: []
+                                servings: [],
+                                instructions: response.meals[0].strInstructions
                             };
                             var j = 1;
                             while (j < 21 && response.meals[0]["strIngredient" + j] != "" && response.meals[0]["strIngredient" + j] != " " && response.meals[0]["strIngredient" + j] != null) {
@@ -308,10 +295,13 @@ MicroModal.init();
                             for (var k = 0; k < recipeArray.length; k++) {
                                 $("#nameCook" + k).text(recipeArray[k].name);
                                 $("#imgCook" + k).attr("src", recipeArray[k].img);
-                        }});
+                        }
+                        console.log(response);
+                    });
                         
                 }
-                // console.log(recipeArray);
+                console.log(recipeArray);
+                
                 
                 // recipes should be rendered here
                 return recipeArray;
@@ -322,11 +312,12 @@ MicroModal.init();
 
     // getRestaurants(61,25);
     
-    // randomRecipe();
+    randomRecipe();
 
     getCategory();
 
     getArea();
+
 
     // search by ingredient: beef
     // recipeSearch(1, "beef");
@@ -339,7 +330,7 @@ MicroModal.init();
 
     $(document).on("click", "#recipe-submit", function(event){
         event.preventDefault();
-        $("#cardAreaCook").empty();
+        $("#cardAreaCook").hide();
         var ingredient = $("#ingredient").val();
         var category = $("#category").val();
         var area = $("#area").val();
@@ -353,47 +344,43 @@ MicroModal.init();
         else if (area != ""){
             recipeSearch(2, area);
         }
-        $("#cardAreaCook").show();
+        $("#cook-cards").show();
         // clear forms
-
     });
 
     $(document).on("click", "#restaurant-submit", function(event){
         event.preventDefault();
-        $("#cardAreaRest").empty();
         console.log("submit button works");
         getRestaurants(getCityId($("#city-form").val()),$("#cuisine-form").val());
         // getRestaurants(61, "chinese");
-        $("#cardAreaRest").show();
+        $("#rest-cards").show();
     });
 
     $(document).on("click", "#recipe-reset", function(event){
         event.preventDefault();
-        $("#cardAreaCook").empty();
         // make form disappear, bring back to landing page
-        $("#recipe-form").hide();
-        $("#cardAreaCook").hide();
+        $(".cook-content").hide();
+        $("#cook-cards").hide();
     });
 
     $(document).on("click", "#restaurant-reset", function(event){
         event.preventDefault();
         // make form disappear, bring back to landing page
-        $("#restaurant-form").hide();
-        $("#cardAreaRest").hide();
+        $(".eatOut").hide();
+        $("#rest-cards").hide();
     });
 
     $("#cook-form-show").on("click", function(event){
         event.preventDefault();
-        $("#recipe-form").show();
-        $("#restaurant-form").hide();
-        $("#cardAreaRest").hide();
+        $(".cook-content").show();
+        $(".eatOut").hide();
+        $("#rest-cards").hide();
     });
 
     $("#rest-form-show").on("click", function(event){
         event.preventDefault();
-        $("#cardAreaCook").empty();
-        $("#restaurant-form").show();
-        $("#recipe-form").hide();
-        $("#cardAreaCook").hide();
+        $(".eatOut").show();
+        $(".cook-content").hide();
+        $("#cook-cards").hide();
     });
 });
