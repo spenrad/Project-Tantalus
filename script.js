@@ -123,7 +123,7 @@ MicroModal.init();
                 $("#imgRest"+i).attr("src", restaurantObject.featuredImg);
                 $("#hoursRest"+i).text("Hours: " + restaurantObject.hours);
                 $("#ratingRest"+i).text("Rating: " + restaurantObject.rating + " / 5");
-                $("#testerRester"+i).text(restaurantObject.name);
+                $("#modal-rest"+i+"-title").text(restaurantObject.name);
 
             }
             // checking for more info to pull
@@ -166,10 +166,13 @@ MicroModal.init();
                     newRecipe.servings.push(response.meals[0]["strMeasure" + j]);
                     j+= 1;
                 }
-
+                
                 $('#randMealName').text(newRecipe.name);
                 $('#randMeal').attr("src", newRecipe.img);
-                $('#randomName').text(newRecipe.name);
+                $('#modal-random-title').text(newRecipe.name);
+                $("recipe-list-random").html(totalIngredients);
+                
+
                 // recipe strings goes in modal
                 // youtube link in modal
                 // source link in modal
@@ -298,17 +301,22 @@ MicroModal.init();
                                 j += 1;
                             }
                             recipeArray.push(newRecipe);
-                            // console.log(newRecipe.ingredients[i] + "- " + newRecipe.servings[i]);
+                            
                             for (var k = 0; k < recipeArray.length; k++) {
+                                var ingredientsStr = newRecipe.servings[k] + "- " + newRecipe.ingredients[k]
+                                var totalIngredients = $("<li>").text(ingredientsStr);
                                 $("#nameCook" + k).text(recipeArray[k].name);
                                 $("#imgCook" + k).attr("src", recipeArray[k].img);
-                                $("#recipeString" + k).text(recipeArray[k].name);
+                                $("#modal-cook"+k+"-title").text(recipeArray[k].name);
+                                $("#recipeStr" + k).append(totalIngredients);
+                                $("#instructionStr"+k).text(recipeArray[k].instructions);
+
                         }
-                        console.log(response);
+                        // console.log(response);
                     });
                         
                 }
-                console.log(recipeArray);
+                // console.log(recipeArray);
                 
                 
                 // recipes should be rendered here
@@ -372,7 +380,6 @@ MicroModal.init();
     // randomizes another recipe to be displayed
     $(document).on("click", "#btn-retry", function(event) {
         event.preventDefault();
-        console.log("this button works")
         randomRecipe();
     });
     
