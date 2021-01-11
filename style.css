@@ -395,7 +395,7 @@ textarea.parsley-error {
   Basic Modal Styles
 \**************************/
 
-/* .modal {
+.modal {
   font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
 }
 
@@ -494,7 +494,8 @@ textarea.parsley-error {
 /**************************\
   Demo Animation Style
 \**************************/
-/* @keyframes mmfadeIn {
+
+@keyframes mmfadeIn {
     from { opacity: 0; }
       to { opacity: 1; }
 }
@@ -541,4 +542,4 @@ textarea.parsley-error {
 .micromodal-slide .modal__container,
 .micromodal-slide .modal__overlay {
   will-change: transform;
-} */
+}

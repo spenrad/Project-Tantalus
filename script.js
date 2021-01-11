@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-// MicroModal.init();
+MicroModal.init();
 
 // Zomato
     // put in a city
@@ -174,7 +174,7 @@ $(document).ready(function () {
 
 
                 // console.log(newRecipe);
-                console.log(response);
+                // console.log(response);
                 // function for displaying the recipe should be called here
                 return newRecipe;
             });
@@ -335,6 +335,8 @@ $(document).ready(function () {
 
     
     // smoothly scolls to specified area on page
+    
+
     function scrollTo(area) {
         $('html,body').animate({
             scrollTop: $(area).offset().top},
@@ -361,6 +363,8 @@ $(document).ready(function () {
         scrollTo("#cook-cards");
         // clear forms
     });
+    
+    // $(document).on("click", "#btn-retry", console.log("This button works"));
 
     $(document).on("click", "#restaurant-submit", function(event){
         event.preventDefault();
@@ -399,4 +403,5 @@ $(document).ready(function () {
         $("#cook-cards").hide();
         scrollTo(".eatOut");
     });
+    
 });
