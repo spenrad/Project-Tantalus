@@ -1,7 +1,7 @@
 # Project Tantalus
 
 ## Description
-
+Project Tantalus is a resource to to search for recipes or restaurants. Restaurants can be searched by city and cuisine type. Recipes can be searched based on main ingredient, meal type, and cuisine type. Search parameters use both textfields and dropdown menus. Searches are performed using themealdb and zomato. Modals are made using micromodals and form validation is done using parsley. All these resources are cited below.
 
 ## Built With
 
@@ -10,6 +10,10 @@
 * [Git]
 * [Github](https://github.com/)
 * [Javascript](https://www.javascript.com/)
+* [themealdb](https://www.themealdb.com/api.php)
+* [zomato](https://developers.zomato.com/api)
+* [parsley](https://parsleyjs.org/)
+* [Micromodal](https://micromodal.now.sh)
 
 ## Deployed Link
 
@@ -17,7 +21,7 @@
 
 ## Preview of Working Site
 
-![Image](/assets/preview.png)
+![Image](/images/tantalus.gif)
 
 
 ## Code Snippet
