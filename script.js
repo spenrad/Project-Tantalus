@@ -34,7 +34,7 @@ MicroModal.init();
         // take user input of a city name and return the city id using zomato cities endpoint
         var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + cityName + "&count=1" + zomatoKey;
 
-        $.ajax({
+        return $.ajax({
             url: queryURL,
             method: "GET"
           })
@@ -394,7 +394,7 @@ MicroModal.init();
     
     $(document).on("click", "#restaurant-submit", async function(event){
         event.preventDefault();
-        var cityId = await getCityId ($("#city-form").val());
+        var cityId = await getCityId($("#city-form").val());
         getRestaurants(cityId,$("#cuisine-form").val());
         // getRestaurants(61, "chinese");
         $("#rest-cards").show();
