@@ -347,7 +347,7 @@ $(document).ready(function () {
 
     $(document).on("click", "#recipe-submit", function(event){
         event.preventDefault();
-        $("#cardAreaCook").empty();
+        $("#cardAreaCook").hide();
         var ingredient = $("#ingredient").val();
         var category = $("#category").val();
         var area = $("#area").val();
@@ -361,47 +361,43 @@ $(document).ready(function () {
         else if (area != ""){
             recipeSearch(2, area);
         }
-        $("#cardAreaCook").show();
+        $("#cook-cards").show();
         // clear forms
-
     });
 
     $(document).on("click", "#restaurant-submit", function(event){
         event.preventDefault();
-        $("#cardAreaRest").empty();
         console.log("submit button works");
         getRestaurants(getCityId($("#city-form").val()),$("#cuisine-form").val());
         // getRestaurants(61, "chinese");
-        $("#cardAreaRest").show();
+        $("#rest-cards").show();
     });
 
     $(document).on("click", "#recipe-reset", function(event){
         event.preventDefault();
-        $("#cardAreaCook").empty();
         // make form disappear, bring back to landing page
-        $("#recipe-form").hide();
-        $("#cardAreaCook").hide();
+        $(".cook-content").hide();
+        $("#cook-cards").hide();
     });
 
     $(document).on("click", "#restaurant-reset", function(event){
         event.preventDefault();
         // make form disappear, bring back to landing page
-        $("#restaurant-form").hide();
-        $("#cardAreaRest").hide();
+        $(".eatOut").hide();
+        $("#rest-cards").hide();
     });
 
     $("#cook-form-show").on("click", function(event){
         event.preventDefault();
-        $("#recipe-form").show();
-        $("#restaurant-form").hide();
-        $("#cardAreaRest").hide();
+        $(".cook-content").show();
+        $(".eatOut").hide();
+        $("#rest-cards").hide();
     });
 
     $("#rest-form-show").on("click", function(event){
         event.preventDefault();
-        $("#cardAreaCook").empty();
-        $("#restaurant-form").show();
-        $("#recipe-form").hide();
-        $("#cardAreaCook").hide();
+        $(".eatOut").show();
+        $(".cook-content").hide();
+        $("#cook-cards").hide();
     });
 });

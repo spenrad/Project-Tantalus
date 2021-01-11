@@ -1,16 +1,33 @@
+/* 
+** Styling todos
+  ** Clean up class names
+  ** Fix flow to match page
+  ** Look through and condense duplicate styling
+  
+**
+*/
+
+/**********************************************/
+/* ---- Base Styles ---- */
+
 * {
   margin: 0;
   padding: 0;
 }
 
-/* 
-** Landing page rough styling
+body {
+  background: rgb(240, 240, 240);
+  color: rgb(53, 53, 53);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
 
-  ** Clean up class names
-  ** Fix flow to match page
-  ** Look through and condense duplicate styling
-
-*/
+.seperator {
+  width: 100%;
+  height: 20px;
+}
+/***********************************************/
+/*  ---- Landing Page ---- */
 
 #landing {
   background-image: url(./images/temp-bg.jpg);
@@ -38,7 +55,7 @@
 }
 
 .main-div h2 {
-  font-size: 40px;
+  font-size: 55px;
   color: white;
 }
 
@@ -56,13 +73,13 @@
 }
 
 .btn {
-  background: rgba(27, 114, 165, 0.63);
+  background: darkolivegreen;
   color: white;
   font-size: 16px;
   padding: 10px;
   text-decoration: none;
   border-radius: 10px;
-  box-shadow: 0 1px 0 rgba(27, 114, 165, 0.63);
+  box-shadow: 0 1px 0 darkolivegreen;
   margin: 0.5rem;
 }
 
@@ -72,7 +89,7 @@
 }
 
 .btn:hover {
-  background-color: rgb(27, 114, 165);
+  background-color: olive;
   font-size: 19px;
   opacity: 1;
 }
@@ -82,39 +99,149 @@
 }
 
 /****************************************************************/
+/* ---- Cook Content ---- */
 
-/* ---- Cook Content Styling ---- */
-
-.cook-option {
-  margin: 45px;
+.cook-content {
+  /* display: none; */
 }
 
-.cook-option h2 {
+.container-div {
+  background: lightgrey;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.cook-content h3 {
   text-align: center;
-  margin: 20px 0;
+  margin: 30px;
   padding: 15px;
 }
-.button {
-  margin: 10px;
+.cook-form-div {
+  padding: 0 40px;
 }
 
-#displayCard {
-  display: inline-block;
+.submit-btn,
+.reset-btn {
+  background: darkolivegreen;
+  color: white;
+  width: 40%;
+  height: 45px;
+  margin: 0 20px;
+  cursor: pointer;
 }
 
-#recipe-form {
+.submit-btn:hover,
+.reset-btn:hover {
+  background: olivedrab;
+}
+
+/* #eat-in,
+#eat-out label {
+  color: white;
+} */
+
+/* --- Card Style --- */
+
+#randomCard h4 {
+  margin-left: 15px;
+}
+
+#ran-recipe .card-section {
+  padding: 10px;
+}
+
+#ran-recipe p {
+  font-size: 20px;
+}
+#ran-recipe img {
+  cursor: pointer;
+}
+
+#btn-retry {
+  background: darkolivegreen;
+  height: 50px;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btn-retry:hover {
+  background: olivedrab;
+}
+/*****************************************************************/
+/* ---- Eat Out Content ---- */
+
+/* .eatOut {
+  display: none;
+} */
+
+.eatOut-container {
+  background: lightgray;
+  width: 100%;
+  height: 100%;
+  margin: 10px 0;
+  padding: 50px;
+}
+
+.eatOut-container h2 {
+  padding-left: 10px;
+  text-align: center;
+}
+
+.eatOut-container h4 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  background: lightgray;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.card {
+  padding: 5px;
+  margin: 15px;
+}
+
+.card button {
+  background: darkolivegreen;
+  color: white;
+  width: 100px;
+  height: 35px;
+  margin: auto;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: olivedrab;
+  /* opacity: 0.8; */
+}
+
+
+.cook-content {
   display: none;
 }
 
-#cardAreaCook{
+#cook-cards{
   display: none;
 }
 
-#restaurant-form{
+.eatOut{
   display: none;
 }
 
-#cardAreaRest{
+#rest-cards{
   display: none;
 }
 
