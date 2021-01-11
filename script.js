@@ -162,7 +162,8 @@ MicroModal.init();
                     id: response.meals[0].idMeal,
                     source: response.meals[0].strSource,
                     ingredients: [],
-                    servings: []
+                    servings: [],
+                    instructions: response.meals[0].strInstructions
                 };
                 
                 var j = 1;
@@ -176,10 +177,17 @@ MicroModal.init();
                     j+= 1;
                 }
                 
+                for (var k = 0; k < newRecipe.ingredients.length; k++) {
+                    var ingredientsStr = newRecipe.servings[k] + "- " + newRecipe.ingredients[k]
+                    totalIngredients = $("<li>").text(ingredientsStr);
+                    $("#recipe-list-random").append(totalIngredients);
+                }
+                
                 $('#randMealName').text(newRecipe.name);
                 $('#randMeal').attr("src", newRecipe.img);
                 $('#modal-random-title').text(newRecipe.name);
-                $("recipe-list-random").html(totalIngredients);
+                $('#instructionStrRand').text(newRecipe.instructions);
+                
                 
 
                 // recipe strings goes in modal
