@@ -252,7 +252,7 @@ $(document).ready(function () {
                     indexArray.push(i);
                 }
                 
-                for (var i = 0; i < Math.min(3, response.meals.length); i++){
+                for (var i = 0; i < Math.min(8, response.meals.length); i++){
                     var randIndex = Math.floor(Math.random()*indexArray.length);
                     var randNum = indexArray[randIndex];
                     indexArray.splice(randIndex, 1);
