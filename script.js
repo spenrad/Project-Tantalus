@@ -118,7 +118,12 @@ $(document).ready(function () {
                     };
                     restaurantArray.push(restaurantObject);
                  
-                // placing restaurant info in cards   
+                // placing restaurant info in cards
+                $("#headerRest"+i).text(restaurantObject.name);
+                $("#imgRest"+i).attr("src", restaurantObject.featuredImg);
+                $("#hoursRest"+i).text("Hours: " + restaurantObject.hours);
+                $("#ratingRest"+i).text("Rating: " + restaurantObject.rating + " / 5");
+
             }
             // checking for more info to pull
                 console.log(restaurantArray);
@@ -328,6 +333,8 @@ $(document).ready(function () {
     // search by category: breakfast
     // recipeSearch(3, "breakfast");
 
+    
+    // smoothly scolls to specified area on page
     function scrollTo(area) {
         $('html,body').animate({
             scrollTop: $(area).offset().top},
