@@ -1,6 +1,5 @@
 /* 
 ** Styling todos
-<<<<<<< HEAD
   ** Clean up class names
   ** Fix flow to match page
   ** Look through and condense duplicate styling
@@ -44,15 +43,6 @@ body {
 }
 /***********************************************/
 /*  ---- Landing Page ---- */
-=======
-
-  ** Clean up class names
-  ** Fix flow to match page
-  ** Look through and condense duplicate styling
-  
-**
-*/
->>>>>>> 6c8bd15847705f65af346ad1c9e38b75a0759879
 
 /**********************************************/
 /* ---- Base Styles ---- */
@@ -147,7 +137,6 @@ body {
 
 /****************************************************************/
 /* ---- Cook Content ---- */
-<<<<<<< HEAD
 
 .cook-content {
   display: none;
@@ -176,138 +165,6 @@ body {
   margin: 0 20px;
   cursor: pointer;
 }
-=======
-
-.cook-content {
-  /* display: none; */
-}
-
-.container-div {
-  background: lightgrey;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
-.cook-content h3 {
-  text-align: center;
-  margin: 30px;
-  padding: 15px;
-}
-.cook-form-div {
-  padding: 0 40px;
-}
-
-.submit-btn,
-.reset-btn {
-  background: darkolivegreen;
-  color: white;
-  width: 40%;
-  height: 45px;
-  margin: 0 20px;
-  cursor: pointer;
-}
-
-.submit-btn:hover,
-.reset-btn:hover {
-  background: olivedrab;
-}
-
-/* #eat-in,
-#eat-out label {
-  color: white;
-} */
-
-/* --- Card Style --- */
-
-#randomCard h4 {
-  margin-left: 15px;
-}
-
-#ran-recipe .card-section {
-  padding: 10px;
-}
-
-#ran-recipe p {
-  font-size: 20px;
-}
-#ran-recipe img {
-  cursor: pointer;
-}
-
-#btn-retry {
-  background: darkolivegreen;
-  height: 50px;
-  width: 100%;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#btn-retry:hover {
-  background: olivedrab;
-}
-/*****************************************************************/
-/* ---- Eat Out Content ---- */
-
-/* .eatOut {
-  display: none;
-} */
-
-.eatOut-container {
-  background: lightgray;
-  width: 100%;
-  height: 100%;
-  margin: 10px 0;
-  padding: 50px;
-}
-
-.eatOut-container h2 {
-  padding-left: 10px;
-  text-align: center;
-}
-
-.eatOut-container h4 {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-container {
-  background: lightgray;
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-}
-
-.card {
-  padding: 5px;
-  margin: 15px;
-}
-
-.card button {
-  background: darkolivegreen;
-  color: white;
-  width: 100px;
-  height: 35px;
-  margin: auto;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background: olivedrab;
-  /* opacity: 0.8; */
-}
-
-/****************************************************************/
-/****************************************************************/
->>>>>>> 6c8bd15847705f65af346ad1c9e38b75a0759879
 
 .submit-btn:hover,
 .reset-btn:hover {
