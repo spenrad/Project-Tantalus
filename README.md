@@ -25,7 +25,7 @@ Project Tantalus is a resource to to search for recipes or restaurants. Restaura
 
 
 ## Code Snippet
-This code snippet shows the html that creates the modal from the micromodal library.
+This code snippet shows the html that creates the modal from the Micromodal.js library.
 
 ```html
     <div class="modal micromodal-slide" id="modal-cook0" aria-hidden="true">
@@ -57,8 +57,27 @@ This code snippet shows the html that creates the modal from the micromodal libr
         <!-- End Body of Modal for Recipes -->
       </div>
     </div>
-
 ```
+
+Using Micromodal.js is extremely simple.
+
+The important parts to focus on are the unique id of the modal "modal-cook0"
+
+The modal will trigger when a target link or button with the attritbute of data-micromodal-trigger="[id name]" is clicked upon.
+
+Micromodal takes care of the heavy lifting for you. No custom javascript is needed, all that is required is the cdn in your body and the function MicroModal.init() in your javascript file.
+
+The minimum styling below is recommended so that the modal can be hidden and triggered appropriately
+```
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+````
+
 
 ## Authors
 * **Jaja Brown**
