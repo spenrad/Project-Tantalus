@@ -121,7 +121,7 @@ body {
 }
 
 .btn:hover {
-  background-color: olive;
+  background-color: olivedrab;
   font-size: 19px;
   opacity: 1;
 }
@@ -168,9 +168,8 @@ body {
   font-size: 20px;
 }
 
-
 #btn-retry,
-#btn-getRandom { 
+#btn-getRandom {
   background: darkolivegreen;
   height: 50px;
   width: 100%;
@@ -180,7 +179,8 @@ body {
   cursor: pointer;
 }
 
-#btn-retry:hover {
+#btn-retry:hover,
+#btn-getRandom:hover {
   background: olivedrab;
 }
 
@@ -278,7 +278,6 @@ body {
 .card button:hover {
   background: olivedrab;
 }
-
 
 
 /*****************************************************************\
@@ -462,7 +461,6 @@ body {
 /********************\
       Parsley CSS
 \********************/
-
 
 /* input.parsley-success,
 select.parsley-success,
