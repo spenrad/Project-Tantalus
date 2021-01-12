@@ -84,27 +84,30 @@ body {
 
 .main-div h2 {
   font-size: 55px;
-  color: white;
+  color: rgb(238, 238, 238);
 }
 
 .main-div p {
-  font-size: 20px;
-  line-height: 1.5;
-  color: #c7cbd8;
-  margin: 15px;
-  padding: auto;
+  font-size: 19px;
+  line-height: 1;
+  color: #cdcdce;
 }
 
 .btn-div {
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 15px;
   flex: 1;
+}
+
+.btn-div span {
+  color: #cdcdce;
+  margin: 10px;
 }
 
 .btn {
   background: darkolivegreen;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   padding: 10px;
   text-decoration: none;
   border-radius: 10px;
