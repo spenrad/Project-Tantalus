@@ -43,7 +43,7 @@ $(document).ready(function () {
             //upon api response
             .then(function (response) {
                 console.log(response);
-                if (response.location_suggestions.length == 0 || response == undefined) {
+                if (response.location_suggestions.length == 0 || response == undefined || $("#city-form").val() == "Enter a valid city!!") {
                     $("#city-form").val("Enter a valid city!!");
                     return -1;
                 }
