@@ -19,6 +19,43 @@ body {
     ---- Landing Page ---- 
 \**************************/
 
+/**********************************************/
+/* ---- Base Styles ---- */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(172, 167, 167);
+  color: rgb(31, 31, 31);
+}
+/***********************************************/
+/*  ---- Landing Page ---- */
+
+/**********************************************/
+/* ---- Base Styles ---- */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(240, 240, 240);
+  color: rgb(53, 53, 53);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.seperator {
+  width: 100%;
+  height: 20px;
+}
+/***********************************************/
+/*  ---- Landing Page ---- */
+
 #landing {
   background-image: url(./images/temp-bg.jpg);
   background-size: cover;
@@ -131,8 +168,9 @@ body {
   font-size: 20px;
 }
 
+
 #btn-retry,
-#btn-getRandom {
+#btn-getRandom { 
   background: darkolivegreen;
   height: 50px;
   width: 100%;
@@ -240,6 +278,7 @@ body {
 .card button:hover {
   background: olivedrab;
 }
+
 
 /*****************************************************************\
                           END CUSTOM STYLES
@@ -421,6 +460,7 @@ body {
 /********************\
       Parsley CSS
 \********************/
+
 
 /* input.parsley-success,
 select.parsley-success,
