@@ -2,6 +2,8 @@ $(document).ready(function () {
 
 MicroModal.init();
 
+
+
 // Zomato
     // put in a city
     //      gives list of cuisines
@@ -40,6 +42,12 @@ MicroModal.init();
           })
             //upon api response
             .then(function(response) {
+                 console.log(response);
+                 if (response.location_suggestions.length == 0 || response == undefined) { 
+                    $("#city-form").val( "Enter a valid city!!");
+                    return -1;
+                }
+                else {
                 var id = response.location_suggestions[0].id;
                 console.log(id);
 
@@ -47,7 +55,7 @@ MicroModal.init();
                 getCuisines(id);
 
                 // return city id
-                return id;
+                return id;}
             });
     }
 
@@ -79,6 +87,10 @@ MicroModal.init();
     async function getRestaurants(cityId, searchWord){
         // array to store restaurant objects
         var restaurantArray = [];
+        // if(cityId == undefined) {
+        //     console.log("is null");
+        //     return null;
+        // }
         // using the city id from city selected by the user and cuisineTypeId if one was selected
         //      if no cuisine type entered cuisineType should be 0
         var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityId + "&entity_type=city&count=50";
@@ -403,10 +415,11 @@ MicroModal.init();
     $(document).on("click", "#restaurant-submit", async function(event){
         event.preventDefault();
         var cityId = await getCityId($("#city-form").val());
+        if (cityId !== -1){
         getRestaurants(cityId,$("#cuisine-form").val());
         // getRestaurants(61, "chinese");
         $("#rest-cards").show();
-        scrollTo("#rest-cards");
+        scrollTo("#rest-cards");}
     });
 
     $(document).on("click", "#recipe-reset", function(event){
@@ -440,3 +453,5 @@ MicroModal.init();
     });
     
 });
+
+
