@@ -236,7 +236,7 @@
               <form id="eat-out">
                 <label
                   >Enter Your Location:
-                  <input type="text" placeholder="Text here" id ="city-form" />
+                  <input type="text" placeholder="Text here" id ="city-form"/>
                 </label>
                 <label
                   >Choose Cuisine Type:
@@ -902,8 +902,15 @@
             <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
           </header>
           <main class="modal__content" id="modal-random-content">
-            <ol id="recipe-list-random">
-            </ol>
+            <div class="grid-x">
+              <div class="cell small-12 medium-3">
+                <ol class= "recipeStr" id="recipe-list-random">
+                </ol>
+              </div>
+              <div class= "cell small-12 medium-7">
+                <p class= "instructionStr" id="instructionStrRand">
+                </p>
+             </div>
           </main>
           <footer class="modal__footer">
             <button class="modal__btn modal__btn-primary">Continue</button>
@@ -922,7 +929,7 @@
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    
     <!-- Foundation Scripts -->
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
@@ -930,9 +937,8 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Parseley
-    <script src="parsley.js"></script>
-    <form data-parsley-validate> ... </form> -->
+    
+    
 
     <!-- Micro Modal -->
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
